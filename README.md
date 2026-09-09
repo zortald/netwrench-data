@@ -1,3 +1,5 @@
+**Русский** · [English](README.en.md)
+
 # netwrench-data
 
 Справочные данные, которые NetWrench подтягивает файлом, без обновления
