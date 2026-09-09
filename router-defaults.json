@@ -1,15 +1,44 @@
 {
-  "schema": 1,
-  "version": 1,
+  "schema": 2,
+  "version": 2,
   "updated": "2026-09-09",
   "entries": [
     {
       "id": "tplink-archer-setup",
       "vendor": "TP-Link",
-      "models": ["Archer C64", "Archer C6", "Archer C6U", "Archer C80", "Archer AX10", "Archer AX23", "Archer AX53", "Archer AX55"],
-      "addresses": ["192.168.0.1", "tplinkwifi.net"],
-      "credentials": [],
-      "state": "setup_required",
+      "models": [
+        "Archer C64",
+        "Archer C6",
+        "Archer C6U",
+        "Archer C80",
+        "Archer AX10",
+        "Archer AX23",
+        "Archer AX53",
+        "Archer AX55"
+      ],
+      "addresses": [
+        "192.168.0.1",
+        "tplinkwifi.net"
+      ],
+      "access": [
+        {
+          "type": "http",
+          "port": 80,
+          "enabled": true
+        }
+      ],
+      "auth": {
+        "usernameField": false,
+        "username": null,
+        "usernameCreated": false,
+        "password": null,
+        "passwordCreated": true,
+        "passwordOnLabel": false,
+        "wizardBlocks": true
+      },
+      "factoryReset": {
+        "holdSeconds": 10
+      },
       "verified": true,
       "note": {
         "ru": "Пароль администратора создаётся при первом входе.",
@@ -20,10 +49,41 @@
     {
       "id": "tplink-classic",
       "vendor": "TP-Link",
-      "models": ["TL-WR841N", "TL-WR840N", "TL-WR741ND", "TL-WR941ND", "TL-WR1043ND", "TL-MR3220", "TL-WA701ND", "Archer C20", "Archer C50"],
-      "addresses": ["192.168.0.1", "192.168.1.1", "tplinkwifi.net"],
-      "credentials": [{ "user": "admin", "password": "admin" }],
-      "state": "fixed",
+      "models": [
+        "TL-WR841N",
+        "TL-WR840N",
+        "TL-WR741ND",
+        "TL-WR941ND",
+        "TL-WR1043ND",
+        "TL-MR3220",
+        "TL-WA701ND",
+        "Archer C20",
+        "Archer C50"
+      ],
+      "addresses": [
+        "192.168.0.1",
+        "192.168.1.1",
+        "tplinkwifi.net"
+      ],
+      "access": [
+        {
+          "type": "http",
+          "port": 80,
+          "enabled": true
+        }
+      ],
+      "auth": {
+        "usernameField": true,
+        "username": "admin",
+        "usernameCreated": false,
+        "password": "admin",
+        "passwordCreated": false,
+        "passwordOnLabel": false,
+        "wizardBlocks": false
+      },
+      "factoryReset": {
+        "holdSeconds": 10
+      },
       "verified": true,
       "note": {
         "ru": "Две ревизии TL-WR841N подтверждены живьём.",
@@ -34,9 +94,30 @@
     {
       "id": "tplink",
       "vendor": "TP-Link",
-      "addresses": ["192.168.0.1", "192.168.1.1", "tplinkwifi.net"],
-      "credentials": [{ "user": "admin", "password": "admin" }],
-      "state": "fixed",
+      "addresses": [
+        "192.168.0.1",
+        "192.168.1.1",
+        "tplinkwifi.net"
+      ],
+      "access": [
+        {
+          "type": "http",
+          "port": 80,
+          "enabled": true
+        }
+      ],
+      "auth": {
+        "usernameField": true,
+        "username": "admin",
+        "usernameCreated": false,
+        "password": "admin",
+        "passwordCreated": false,
+        "passwordOnLabel": false,
+        "wizardBlocks": false
+      },
+      "factoryReset": {
+        "holdSeconds": 10
+      },
       "note": {
         "ru": "Прошивки с 2018 года просят задать пароль при первом входе.",
         "en": "Firmware from 2018 on asks to set a password at first login."
@@ -46,10 +127,35 @@
     {
       "id": "tenda-ac",
       "vendor": "Tenda",
-      "models": ["AC5", "AC6", "AC8", "AC10", "AC11", "AC23", "AC1200"],
-      "addresses": ["192.168.0.1", "tendawifi.com"],
-      "credentials": [],
-      "state": "setup_required",
+      "models": [
+        "AC5",
+        "AC6",
+        "AC8",
+        "AC10",
+        "AC11",
+        "AC23",
+        "AC1200"
+      ],
+      "addresses": [
+        "192.168.0.1",
+        "tendawifi.com"
+      ],
+      "access": [
+        {
+          "type": "http",
+          "port": 80,
+          "enabled": true
+        }
+      ],
+      "auth": {
+        "usernameField": false,
+        "username": null,
+        "usernameCreated": false,
+        "password": null,
+        "passwordCreated": true,
+        "passwordOnLabel": false,
+        "wizardBlocks": true
+      },
       "note": {
         "ru": "Пароль задаётся мастером первичной настройки.",
         "en": "Password is set by the first-run wizard."
@@ -59,10 +165,33 @@
     {
       "id": "tenda-n",
       "vendor": "Tenda",
-      "models": ["N301", "N300", "F3", "F6", "F9"],
-      "addresses": ["192.168.0.1", "tendawifi.com"],
-      "credentials": [],
-      "state": "passwordless",
+      "models": [
+        "N301",
+        "N300",
+        "F3",
+        "F6",
+        "F9"
+      ],
+      "addresses": [
+        "192.168.0.1",
+        "tendawifi.com"
+      ],
+      "access": [
+        {
+          "type": "http",
+          "port": 80,
+          "enabled": true
+        }
+      ],
+      "auth": {
+        "usernameField": false,
+        "username": null,
+        "usernameCreated": false,
+        "password": null,
+        "passwordCreated": false,
+        "passwordOnLabel": false,
+        "wizardBlocks": true
+      },
       "verified": true,
       "note": {
         "ru": "Заводское состояние без пароля, вход открывает мастер настройки.",
@@ -73,9 +202,36 @@
     {
       "id": "keenetic",
       "vendor": "Keenetic",
-      "addresses": ["192.168.1.1", "my.keenetic.net"],
-      "credentials": [{ "user": "admin", "password": null }],
-      "state": "setup_required",
+      "addresses": [
+        "192.168.1.1",
+        "my.keenetic.net"
+      ],
+      "access": [
+        {
+          "type": "http",
+          "port": 80,
+          "enabled": true
+        },
+        {
+          "type": "ssh",
+          "port": 22,
+          "enabled": false
+        },
+        {
+          "type": "telnet",
+          "port": 23,
+          "enabled": false
+        }
+      ],
+      "auth": {
+        "usernameField": true,
+        "username": "admin",
+        "usernameCreated": false,
+        "password": null,
+        "passwordCreated": true,
+        "passwordOnLabel": false,
+        "wizardBlocks": true
+      },
       "note": {
         "ru": "Логин admin, пароль создаётся при первом входе.",
         "en": "User admin; password is created at first login."
@@ -85,9 +241,56 @@
     {
       "id": "mikrotik",
       "vendor": "MikroTik",
-      "addresses": ["192.168.88.1"],
-      "credentials": [{ "user": "admin", "password": "" }],
-      "state": "fixed",
+      "addresses": [
+        "192.168.88.1"
+      ],
+      "access": [
+        {
+          "type": "http",
+          "port": 80,
+          "enabled": true
+        },
+        {
+          "type": "ssh",
+          "port": 22,
+          "enabled": true
+        },
+        {
+          "type": "telnet",
+          "port": 23,
+          "enabled": true
+        },
+        {
+          "type": "api",
+          "port": 8728,
+          "enabled": true
+        },
+        {
+          "type": "api-tls",
+          "port": 8729,
+          "enabled": true
+        },
+        {
+          "type": "winbox",
+          "port": 8291,
+          "enabled": true
+        }
+      ],
+      "auth": {
+        "usernameField": true,
+        "username": "admin",
+        "usernameCreated": false,
+        "password": "",
+        "passwordCreated": false,
+        "passwordOnLabel": false,
+        "wizardBlocks": false
+      },
+      "factoryReset": {
+        "note": {
+          "ru": "Удерживать кнопку reset при подаче питания до мигания индикатора.",
+          "en": "Hold reset while powering on until the LED flashes."
+        }
+      },
       "verified": true,
       "note": {
         "ru": "Пустой пароль. RouterOS 6.45 и новее требует задать его при первом входе.",
@@ -98,10 +301,34 @@
     {
       "id": "trendchip-nokia",
       "vendor": "Nokia",
-      "models": ["G-140W-C", "G-140W-CS"],
-      "addresses": ["192.168.1.1"],
-      "credentials": [{ "user": "admin", "password": "admin" }],
-      "state": "fixed",
+      "models": [
+        "G-140W-C",
+        "G-140W-CS"
+      ],
+      "addresses": [
+        "192.168.1.1"
+      ],
+      "access": [
+        {
+          "type": "http",
+          "port": 80,
+          "enabled": true
+        },
+        {
+          "type": "telnet",
+          "port": 23,
+          "enabled": true
+        }
+      ],
+      "auth": {
+        "usernameField": true,
+        "username": "admin",
+        "usernameCreated": false,
+        "password": "admin",
+        "passwordCreated": false,
+        "passwordOnLabel": true,
+        "wizardBlocks": false
+      },
       "verified": true,
       "note": {
         "ru": "GPON ONT. У провайдерских прошивок пароль часто на наклейке.",
@@ -112,23 +339,59 @@
     {
       "id": "phicomm",
       "vendor": "Phicomm / Lee Home / Leewifi",
-      "models": ["DGX21"],
-      "addresses": ["home.to", "192.168.1.1"],
-      "credentials": [],
-      "state": "unknown",
+      "models": [
+        "DGX21"
+      ],
+      "addresses": [
+        "home.to",
+        "192.168.1.1"
+      ],
+      "access": [
+        {
+          "type": "http",
+          "port": 80,
+          "enabled": true
+        }
+      ],
+      "auth": {
+        "usernameField": true,
+        "username": "dg",
+        "usernameCreated": false,
+        "password": "ivanlee",
+        "passwordCreated": false,
+        "passwordOnLabel": false,
+        "wizardBlocks": false
+      },
       "verified": true,
       "note": {
-        "ru": "Адрес управления подтверждён живьём, заводские учётные данные не проверены.",
-        "en": "Management address confirmed live; factory credentials not verified."
+        "ru": "Адрес управления и учётные данные подтверждены живьём.",
+        "en": "Management address and credentials confirmed live."
       },
-      "source": "DGX21 confirmed live (address only)"
+      "source": "DGX21 confirmed live"
     },
     {
       "id": "asus",
       "vendor": "ASUS",
-      "addresses": ["192.168.1.1", "router.asus.com"],
-      "credentials": [{ "user": "admin", "password": "admin" }],
-      "state": "fixed",
+      "addresses": [
+        "192.168.1.1",
+        "router.asus.com"
+      ],
+      "access": [
+        {
+          "type": "http",
+          "port": 80,
+          "enabled": true
+        }
+      ],
+      "auth": {
+        "usernameField": true,
+        "username": "admin",
+        "usernameCreated": false,
+        "password": "admin",
+        "passwordCreated": false,
+        "passwordOnLabel": false,
+        "wizardBlocks": false
+      },
       "note": {
         "ru": "Новые прошивки просят задать пароль мастером настройки.",
         "en": "Newer firmware asks the setup wizard to set a password."
@@ -138,9 +401,26 @@
     {
       "id": "dlink",
       "vendor": "D-Link",
-      "addresses": ["192.168.0.1", "192.168.1.1"],
-      "credentials": [{ "user": "admin", "password": "" }],
-      "state": "fixed",
+      "addresses": [
+        "192.168.0.1",
+        "192.168.1.1"
+      ],
+      "access": [
+        {
+          "type": "http",
+          "port": 80,
+          "enabled": true
+        }
+      ],
+      "auth": {
+        "usernameField": true,
+        "username": "admin",
+        "usernameCreated": false,
+        "password": "",
+        "passwordCreated": false,
+        "passwordOnLabel": false,
+        "wizardBlocks": false
+      },
       "note": {
         "ru": "Пустой пароль. Часть моделей просит сменить его сразу после входа.",
         "en": "Empty password. Some models require changing it right after login."
@@ -150,25 +430,81 @@
     {
       "id": "netgear",
       "vendor": "Netgear",
-      "addresses": ["192.168.1.1", "routerlogin.net"],
-      "credentials": [{ "user": "admin", "password": "password" }],
-      "state": "fixed",
+      "addresses": [
+        "192.168.1.1",
+        "routerlogin.net"
+      ],
+      "access": [
+        {
+          "type": "http",
+          "port": 80,
+          "enabled": true
+        }
+      ],
+      "auth": {
+        "usernameField": true,
+        "username": "admin",
+        "usernameCreated": false,
+        "password": "password",
+        "passwordCreated": false,
+        "passwordOnLabel": false,
+        "wizardBlocks": false
+      },
       "source": "Netgear user manual"
     },
     {
       "id": "zyxel",
       "vendor": "Zyxel",
-      "addresses": ["192.168.1.1"],
-      "credentials": [{ "user": "admin", "password": "1234" }],
-      "state": "fixed",
+      "addresses": [
+        "192.168.1.1"
+      ],
+      "access": [
+        {
+          "type": "http",
+          "port": 80,
+          "enabled": true
+        }
+      ],
+      "auth": {
+        "usernameField": true,
+        "username": "admin",
+        "usernameCreated": false,
+        "password": "1234",
+        "passwordCreated": false,
+        "passwordOnLabel": false,
+        "wizardBlocks": false
+      },
       "source": "Zyxel user guide"
     },
     {
       "id": "huawei",
       "vendor": "Huawei",
-      "addresses": ["192.168.3.1", "192.168.100.1", "192.168.8.1"],
-      "credentials": [{ "user": "admin", "password": "admin" }],
-      "state": "fixed",
+      "addresses": [
+        "192.168.3.1",
+        "192.168.100.1",
+        "192.168.8.1"
+      ],
+      "access": [
+        {
+          "type": "http",
+          "port": 80,
+          "enabled": true
+        },
+        {
+          "type": "telnet",
+          "port": 23,
+          "enabled": false
+        }
+      ],
+      "auth": {
+        "usernameField": true,
+        "username": "admin",
+        "usernameCreated": false,
+        "password": "admin",
+        "passwordCreated": false,
+        "passwordOnLabel": true,
+        "wizardBlocks": false
+      },
       "note": {
         "ru": "У ONT и провайдерских прошивок пароль обычно на наклейке.",
         "en": "On ONTs and ISP firmware the password is usually on the label."
@@ -178,9 +514,31 @@
     {
       "id": "zte",
       "vendor": "ZTE",
-      "addresses": ["192.168.1.1", "192.168.0.1"],
-      "credentials": [{ "user": "admin", "password": "admin" }],
-      "state": "fixed",
+      "addresses": [
+        "192.168.1.1",
+        "192.168.0.1"
+      ],
+      "access": [
+        {
+          "type": "http",
+          "port": 80,
+          "enabled": true
+        },
+        {
+          "type": "telnet",
+          "port": 23,
+          "enabled": false
+        }
+      ],
+      "auth": {
+        "usernameField": true,
+        "username": "admin",
+        "usernameCreated": false,
+        "password": "admin",
+        "passwordCreated": false,
+        "passwordOnLabel": true,
+        "wizardBlocks": false
+      },
       "note": {
         "ru": "У провайдерских прошивок пароль обычно на наклейке.",
         "en": "On ISP firmware the password is usually on the label."
@@ -190,9 +548,26 @@
     {
       "id": "xiaomi",
       "vendor": "Xiaomi",
-      "addresses": ["192.168.31.1", "miwifi.com"],
-      "credentials": [],
-      "state": "setup_required",
+      "addresses": [
+        "192.168.31.1",
+        "miwifi.com"
+      ],
+      "access": [
+        {
+          "type": "http",
+          "port": 80,
+          "enabled": true
+        }
+      ],
+      "auth": {
+        "usernameField": false,
+        "username": null,
+        "usernameCreated": false,
+        "password": null,
+        "passwordCreated": true,
+        "passwordOnLabel": false,
+        "wizardBlocks": true
+      },
       "note": {
         "ru": "Пароль задаётся при настройке, обычно через приложение Mi Home.",
         "en": "Password is set during setup, usually via the Mi Home app."
@@ -202,9 +577,26 @@
     {
       "id": "mercusys",
       "vendor": "Mercusys",
-      "addresses": ["192.168.1.1", "mwlogin.net"],
-      "credentials": [],
-      "state": "setup_required",
+      "addresses": [
+        "192.168.1.1",
+        "mwlogin.net"
+      ],
+      "access": [
+        {
+          "type": "http",
+          "port": 80,
+          "enabled": true
+        }
+      ],
+      "auth": {
+        "usernameField": false,
+        "username": null,
+        "usernameCreated": false,
+        "password": null,
+        "passwordCreated": true,
+        "passwordOnLabel": false,
+        "wizardBlocks": true
+      },
       "note": {
         "ru": "Пароль создаётся при первом входе.",
         "en": "Password is created at first login."
@@ -214,17 +606,51 @@
     {
       "id": "totolink",
       "vendor": "Totolink",
-      "addresses": ["192.168.0.1", "192.168.1.1"],
-      "credentials": [{ "user": "admin", "password": "admin" }],
-      "state": "fixed",
+      "addresses": [
+        "192.168.0.1",
+        "192.168.1.1"
+      ],
+      "access": [
+        {
+          "type": "http",
+          "port": 80,
+          "enabled": true
+        }
+      ],
+      "auth": {
+        "usernameField": true,
+        "username": "admin",
+        "usernameCreated": false,
+        "password": "admin",
+        "passwordCreated": false,
+        "passwordOnLabel": false,
+        "wizardBlocks": false
+      },
       "source": "Totolink user manual"
     },
     {
       "id": "netis",
       "vendor": "Netis",
-      "addresses": ["192.168.1.1", "netis.cc"],
-      "credentials": [{ "user": "guest", "password": "guest" }],
-      "state": "fixed",
+      "addresses": [
+        "192.168.1.1",
+        "netis.cc"
+      ],
+      "access": [
+        {
+          "type": "http",
+          "port": 80,
+          "enabled": true
+        }
+      ],
+      "auth": {
+        "usernameField": true,
+        "username": "guest",
+        "usernameCreated": false,
+        "password": "guest",
+        "passwordCreated": false,
+        "passwordOnLabel": false,
+        "wizardBlocks": false
+      },
       "note": {
         "ru": "Часть моделей пускает в веб-интерфейс без пароля.",
         "en": "Some models open the web interface with no password."
@@ -234,25 +660,78 @@
     {
       "id": "eltex",
       "vendor": "Eltex",
-      "addresses": ["192.168.1.1"],
-      "credentials": [{ "user": "admin", "password": "password" }],
-      "state": "fixed",
+      "addresses": [
+        "192.168.1.1"
+      ],
+      "access": [
+        {
+          "type": "http",
+          "port": 80,
+          "enabled": true
+        },
+        {
+          "type": "telnet",
+          "port": 23,
+          "enabled": false
+        }
+      ],
+      "auth": {
+        "usernameField": true,
+        "username": "admin",
+        "usernameCreated": false,
+        "password": "password",
+        "passwordCreated": false,
+        "passwordOnLabel": false,
+        "wizardBlocks": false
+      },
       "source": "Eltex user manual"
     },
     {
       "id": "rotek",
       "vendor": "Rotek",
-      "addresses": ["192.168.1.1"],
-      "credentials": [{ "user": "admin", "password": "admin" }],
-      "state": "fixed",
+      "addresses": [
+        "192.168.1.1"
+      ],
+      "access": [
+        {
+          "type": "http",
+          "port": 80,
+          "enabled": true
+        }
+      ],
+      "auth": {
+        "usernameField": true,
+        "username": "admin",
+        "usernameCreated": false,
+        "password": "admin",
+        "passwordCreated": false,
+        "passwordOnLabel": false,
+        "wizardBlocks": false
+      },
       "source": "Rotek user manual"
     },
     {
       "id": "sagemcom",
       "vendor": "Sagemcom",
-      "addresses": ["192.168.1.1"],
-      "credentials": [{ "user": "admin", "password": "admin" }],
-      "state": "fixed",
+      "addresses": [
+        "192.168.1.1"
+      ],
+      "access": [
+        {
+          "type": "http",
+          "port": 80,
+          "enabled": true
+        }
+      ],
+      "auth": {
+        "usernameField": true,
+        "username": "admin",
+        "usernameCreated": false,
+        "password": "admin",
+        "passwordCreated": false,
+        "passwordOnLabel": true,
+        "wizardBlocks": false
+      },
       "note": {
         "ru": "Провайдерские F@st часто используют пароль с наклейки.",
         "en": "ISP-branded F@st units often use the label password."
@@ -262,17 +741,49 @@
     {
       "id": "sercomm",
       "vendor": "Sercomm",
-      "addresses": ["192.168.1.1"],
-      "credentials": [{ "user": "admin", "password": "admin" }],
-      "state": "fixed",
+      "addresses": [
+        "192.168.1.1"
+      ],
+      "access": [
+        {
+          "type": "http",
+          "port": 80,
+          "enabled": true
+        }
+      ],
+      "auth": {
+        "usernameField": true,
+        "username": "admin",
+        "usernameCreated": false,
+        "password": "admin",
+        "passwordCreated": false,
+        "passwordOnLabel": false,
+        "wizardBlocks": false
+      },
       "source": "Sercomm user manual"
     },
     {
       "id": "technicolor",
       "vendor": "Technicolor",
-      "addresses": ["192.168.1.1"],
-      "credentials": [{ "user": "admin", "password": "admin" }],
-      "state": "fixed",
+      "addresses": [
+        "192.168.1.1"
+      ],
+      "access": [
+        {
+          "type": "http",
+          "port": 80,
+          "enabled": true
+        }
+      ],
+      "auth": {
+        "usernameField": true,
+        "username": "admin",
+        "usernameCreated": false,
+        "password": "admin",
+        "passwordCreated": false,
+        "passwordOnLabel": true,
+        "wizardBlocks": false
+      },
       "note": {
         "ru": "У провайдерских прошивок пароль обычно на наклейке.",
         "en": "On ISP firmware the password is usually on the label."
@@ -282,17 +793,54 @@
     {
       "id": "cudy",
       "vendor": "Cudy",
-      "addresses": ["192.168.10.1"],
-      "credentials": [{ "user": "admin", "password": "admin" }],
-      "state": "fixed",
+      "addresses": [
+        "192.168.10.1"
+      ],
+      "access": [
+        {
+          "type": "http",
+          "port": 80,
+          "enabled": true
+        }
+      ],
+      "auth": {
+        "usernameField": true,
+        "username": "admin",
+        "usernameCreated": false,
+        "password": "admin",
+        "passwordCreated": false,
+        "passwordOnLabel": false,
+        "wizardBlocks": false
+      },
       "source": "Cudy quick installation guide"
     },
     {
       "id": "openwrt",
       "vendor": "OpenWrt",
-      "addresses": ["192.168.1.1"],
-      "credentials": [{ "user": "root", "password": "" }],
-      "state": "passwordless",
+      "addresses": [
+        "192.168.1.1"
+      ],
+      "access": [
+        {
+          "type": "http",
+          "port": 80,
+          "enabled": true
+        },
+        {
+          "type": "ssh",
+          "port": 22,
+          "enabled": true
+        }
+      ],
+      "auth": {
+        "usernameField": true,
+        "username": "root",
+        "usernameCreated": false,
+        "password": "",
+        "passwordCreated": false,
+        "passwordOnLabel": false,
+        "wizardBlocks": false
+      },
       "note": {
         "ru": "Свежая установка без пароля, LuCI требует задать его при первом входе.",
         "en": "A fresh install has no password; LuCI requires setting one at first login."
@@ -302,26 +850,105 @@
     {
       "id": "ddwrt",
       "vendor": "DD-WRT",
-      "addresses": ["192.168.1.1"],
-      "credentials": [{ "user": "root", "password": "admin" }],
-      "state": "fixed",
+      "addresses": [
+        "192.168.1.1"
+      ],
+      "access": [
+        {
+          "type": "http",
+          "port": 80,
+          "enabled": true
+        },
+        {
+          "type": "ssh",
+          "port": 22,
+          "enabled": false
+        },
+        {
+          "type": "telnet",
+          "port": 23,
+          "enabled": false
+        }
+      ],
+      "auth": {
+        "usernameField": true,
+        "username": "root",
+        "usernameCreated": false,
+        "password": "admin",
+        "passwordCreated": false,
+        "passwordOnLabel": false,
+        "wizardBlocks": false
+      },
       "source": "DD-WRT documentation"
     },
     {
       "id": "padavan",
       "vendor": "Padavan",
-      "addresses": ["192.168.1.1"],
-      "credentials": [{ "user": "admin", "password": "admin" }],
-      "state": "fixed",
+      "addresses": [
+        "192.168.1.1"
+      ],
+      "access": [
+        {
+          "type": "http",
+          "port": 80,
+          "enabled": true
+        },
+        {
+          "type": "ssh",
+          "port": 22,
+          "enabled": false
+        },
+        {
+          "type": "telnet",
+          "port": 23,
+          "enabled": false
+        }
+      ],
+      "auth": {
+        "usernameField": true,
+        "username": "admin",
+        "usernameCreated": false,
+        "password": "admin",
+        "passwordCreated": false,
+        "passwordOnLabel": false,
+        "wizardBlocks": false
+      },
       "source": "Padavan firmware documentation"
     },
     {
       "id": "ubiquiti-airos",
       "vendor": "Ubiquiti",
-      "models": ["NanoStation", "NanoBeam", "LiteBeam", "PowerBeam", "Rocket"],
-      "addresses": ["192.168.1.20"],
-      "credentials": [{ "user": "ubnt", "password": "ubnt" }],
-      "state": "fixed",
+      "models": [
+        "NanoStation",
+        "NanoBeam",
+        "LiteBeam",
+        "PowerBeam",
+        "Rocket"
+      ],
+      "addresses": [
+        "192.168.1.20"
+      ],
+      "access": [
+        {
+          "type": "http",
+          "port": 80,
+          "enabled": true
+        },
+        {
+          "type": "ssh",
+          "port": 22,
+          "enabled": true
+        }
+      ],
+      "auth": {
+        "usernameField": true,
+        "username": "ubnt",
+        "usernameCreated": false,
+        "password": "ubnt",
+        "passwordCreated": false,
+        "passwordOnLabel": false,
+        "wizardBlocks": false
+      },
       "note": {
         "ru": "airOS. UniFi-точки задают учётные данные при adoption.",
         "en": "airOS. UniFi devices take their credentials at adoption."
