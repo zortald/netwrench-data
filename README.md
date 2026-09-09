@@ -1,23 +1,22 @@
-**Русский** · [English](README.en.md)
+**English** · [Русский](README.ru.md)
 
 # netwrench-data
 
-Справочные данные, которые NetWrench подтягивает файлом, без обновления
-приложения. Здесь нет кода — только факты, которые приложение показывает
-технику.
+Reference data that NetWrench fetches as a file, without an application
+update. There is no code here — only facts the application shows a technician.
 
-## router-defaults.json — заводской вход в роутер
+## router-defaults.json — factory login for routers
 
-Адрес веб-интерфейса и заводские учётные данные по вендору и модели. Нужны
-там, где у NetWrench ещё нет модуля авторизации для этой железки: приложение
-опознало роутер, но настроить его само не может — и тогда показывает, куда
-зайти руками и чем.
+Management address and factory credentials by vendor and model. They are
+needed where NetWrench has no authentication module for a device yet: the
+application has identified the router but cannot configure it — and so it
+shows where to log in by hand, and with what.
 
-Данные публичные: всё это напечатано в руководствах вендоров и на коробках.
-NetWrench ничего не подбирает и не перебирает — пара подставляется в поля,
-вход выполняет человек.
+The data is public: all of it is printed in vendor manuals and on the boxes.
+NetWrench never guesses and never brute-forces — a pair is filled into the
+fields, and a human performs the login.
 
-### Формат
+### Format
 
 ```json
 {
@@ -28,88 +27,87 @@ NetWrench ничего не подбирает и не перебирает — 
 }
 ```
 
-`version` — целое, растёт при каждом изменении. Приложение принимает файл
-только со `version` больше текущего, поэтому её нужно поднимать в том же
-коммите, что и правку записей.
+`version` is an integer that grows with every change. The application accepts
+a file only when its `version` is higher than the current one, so raise it in
+the same commit that edits the entries.
 
-Запись:
+An entry:
 
-| Поле | Обязательно | Значение |
+| Field | Required | Meaning |
 | --- | --- | --- |
-| `id` | да | Стабильный идентификатор записи, уникальный по файлу |
-| `vendor` | да | Имя вендора **ровно в том виде, в каком его выдаёт детектор** — см. ниже |
-| `models` | нет | Канонические модели. Нет поля — запись описывает весь модельный ряд вендора |
-| `addresses` | да | Адреса управления: IP и/или имя хоста, первым — основной |
-| `access` | да | Службы управления и их порты — см. ниже |
-| `auth` | да | Как устроен вход — см. ниже |
-| `factoryReset` | нет | `holdSeconds` и/или `note`: как сбросить к заводским |
-| `verified` | нет | `true`, если значение подтверждено на живой железке в ходе разработки |
-| `note` | нет | Короткая заметка, объект `{ru, en}` |
-| `source` | нет | Откуда взято |
+| `id` | yes | Stable entry identifier, unique within the file |
+| `vendor` | yes | Vendor name **exactly as the detector reports it** — see below |
+| `models` | no | Canonical models. Without this field the entry covers the vendor's whole range |
+| `addresses` | yes | Management addresses: IP and/or hostname, primary one first |
+| `access` | yes | Management services and their ports — see below |
+| `auth` | yes | How logging in works — see below |
+| `factoryReset` | no | `holdSeconds` and/or `note`: how to reset to factory defaults |
+| `verified` | no | `true` when the value was confirmed on real hardware during development |
+| `note` | no | Short note, an object `{ru, en}` |
+| `source` | no | Where it came from |
 
 ### access
 
-Список служб, каждая — `{type, port, enabled}`. `enabled` описывает состояние
-**с завода**: `false` означает, что служба есть, но выключена, и стучаться в
-неё бесполезно, пока её не включат через веб-интерфейс. Это избавляет техника
-от диагностики отказа, которого нет.
+A list of services, each `{type, port, enabled}`. `enabled` describes the
+**factory** state: `false` means the service exists but is switched off, and
+knocking on it is pointless until it is enabled through the web interface.
+This spares the technician from diagnosing a failure that is not one.
 
-Допустимые `type`: `http`, `https`, `ssh`, `telnet`, `api`, `api-tls`,
-`winbox`. Веб-интерфейс (`http` или `https`) обязан присутствовать.
+Allowed `type` values: `http`, `https`, `ssh`, `telnet`, `api`, `api-tls`,
+`winbox`. A web interface (`http` or `https`) must be present.
 
-`ssh` и `telnet` с их портами напрямую кормят терминал NetWrench.
+`ssh` and `telnet` with their ports feed NetWrench's terminal directly.
 
 ### auth
 
-| Поле | Значение |
+| Field | Meaning |
 | --- | --- |
-| `usernameField` | Есть ли в форме входа поле логина вообще. У Tenda, Mercusys, Xiaomi и новых Archer входят только паролем |
-| `username` | Заводской логин. `null`, когда поля нет или логин придумывает пользователь |
-| `usernameCreated` | Логин создаётся пользователем при первом входе |
-| `password` | Заводской пароль. `""` — пустой, поле оставляют пустым. `null` — готового пароля нет |
-| `passwordCreated` | Пароль создаётся пользователем при первом входе |
-| `passwordOnLabel` | Пароль напечатан на наклейке устройства. Уживается с заводской парой: у розничного экземпляра работает `admin/admin`, у провайдерской прошивки того же вендора — наклейка |
-| `wizardBlocks` | Пока не пройден мастер первичной настройки, управление недоступно (§ 9.2 правил проекта) |
+| `usernameField` | Whether the login form has a username field at all. Tenda, Mercusys, Xiaomi and newer Archer units are entered with a password only |
+| `username` | Factory username. `null` when there is no field, or the user invents it |
+| `usernameCreated` | The username is created by the user at first login |
+| `password` | Factory password. `""` — empty, the field is left blank. `null` — no ready password exists |
+| `passwordCreated` | The password is created by the user at first login |
+| `passwordOnLabel` | The password is printed on the device label. This coexists with a factory pair: on a retail unit `admin/admin` works, while an ISP-branded build of the same vendor uses the label |
+| `wizardBlocks` | Management is unavailable until the first-run wizard has been completed (§ 9.2 of the project rules) |
 
-Согласованность проверяет `validate.py`: придуманного пользователем значения
-в базе быть не может, а пароль не может одновременно создаваться и быть
-напечатанным на наклейке.
+`validate.py` enforces consistency: a value the user invents cannot be in the
+database, and a password cannot be both created at first login and printed on
+the label.
 
-Отдельного поля «состояние» нет намеренно — оно выводится из `auth`, и
-хранить его рядом значило бы завести второй источник правды, который рано
-или поздно разойдётся с первым.
+There is deliberately no separate "state" field — it follows from `auth`, and
+storing it alongside would create a second source of truth that sooner or
+later disagrees with the first.
 
-### Правило подбора
+### Lookup rule
 
-1. Точное совпадение по `vendor` **и** `models`.
-2. Иначе — запись того же `vendor` без `models`.
-3. Иначе — ничего; приложение показывает только то, что измерило само.
+1. Exact match on `vendor` **and** `models`.
+2. Otherwise the entry for the same `vendor` without `models`.
+3. Otherwise nothing; the application shows only what it measured itself.
 
-Записи с `models` идут в файле выше общей записи вендора, чтобы порядок
-чтения совпадал с порядком подбора.
+Entries with `models` are placed above the vendor's general entry so that
+reading order matches lookup order.
 
-### Имена вендоров
+### Vendor names
 
-`vendor` должен совпадать со строкой, которую выдаёт детектор NetWrench —
-иначе запись не найдётся никогда. Источники строк в репозитории приложения:
+`vendor` must match the string NetWrench's detector reports, or the entry will
+never be found. The strings come from the application repository:
 
-* `discovery/…/RouterDetector.kt`, функция `detectVendor` — общий словарь брендов;
-* `discovery/…/<vendor>/…FingerprintConfig.kt`, константа `VENDOR_FAMILY` — семейства с собственным детектором.
+* `discovery/…/RouterDetector.kt`, function `detectVendor` — the general brand dictionary;
+* `discovery/…/<vendor>/…FingerprintConfig.kt`, constant `VENDOR_FAMILY` — families with a detector of their own.
 
-### Проверка перед публикацией
+### Check before publishing
 
 ```sh
 python3 validate.py
 ```
 
-Ненулевой код возврата — файл публиковать нельзя.
+A non-zero exit code means the file must not be published.
 
-## Лицензия и происхождение данных
+## Licence and provenance
 
-Файл составлен вручную по руководствам вендоров и по устройствам,
-проверенным в ходе разработки. Это не копия чужой базы данных: заимствование
-готовых наборов (в том числе из ЕС, где действует sui generis право на базы
-данных) не производилось и не допускается — NetWrench распространяется как
-платный продукт.
+The file is compiled by hand from vendor manuals and from devices verified
+during development. It is not a copy of anyone else's database: no ready-made
+dataset was taken (including from the EU, where the sui generis database right
+applies), and none may be — NetWrench is distributed as a paid product.
 
-Записи с `"verified": true` подтверждены на реальном оборудовании.
+Entries marked `"verified": true` were confirmed on real hardware.
