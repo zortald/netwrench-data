@@ -1,0 +1,332 @@
+{
+  "schema": 1,
+  "version": 1,
+  "updated": "2026-09-09",
+  "entries": [
+    {
+      "id": "tplink-archer-setup",
+      "vendor": "TP-Link",
+      "models": ["Archer C64", "Archer C6", "Archer C6U", "Archer C80", "Archer AX10", "Archer AX23", "Archer AX53", "Archer AX55"],
+      "addresses": ["192.168.0.1", "tplinkwifi.net"],
+      "credentials": [],
+      "state": "setup_required",
+      "verified": true,
+      "note": {
+        "ru": "Пароль администратора создаётся при первом входе.",
+        "en": "Admin password is created at first login."
+      },
+      "source": "TP-Link quick installation guide; Archer C64 confirmed live"
+    },
+    {
+      "id": "tplink-classic",
+      "vendor": "TP-Link",
+      "models": ["TL-WR841N", "TL-WR840N", "TL-WR741ND", "TL-WR941ND", "TL-WR1043ND", "TL-MR3220", "TL-WA701ND", "Archer C20", "Archer C50"],
+      "addresses": ["192.168.0.1", "192.168.1.1", "tplinkwifi.net"],
+      "credentials": [{ "user": "admin", "password": "admin" }],
+      "state": "fixed",
+      "verified": true,
+      "note": {
+        "ru": "Две ревизии TL-WR841N подтверждены живьём.",
+        "en": "Two TL-WR841N revisions confirmed live."
+      },
+      "source": "TP-Link user guide; TL-WR841N confirmed live"
+    },
+    {
+      "id": "tplink",
+      "vendor": "TP-Link",
+      "addresses": ["192.168.0.1", "192.168.1.1", "tplinkwifi.net"],
+      "credentials": [{ "user": "admin", "password": "admin" }],
+      "state": "fixed",
+      "note": {
+        "ru": "Прошивки с 2018 года просят задать пароль при первом входе.",
+        "en": "Firmware from 2018 on asks to set a password at first login."
+      },
+      "source": "TP-Link user guide"
+    },
+    {
+      "id": "tenda-ac",
+      "vendor": "Tenda",
+      "models": ["AC5", "AC6", "AC8", "AC10", "AC11", "AC23", "AC1200"],
+      "addresses": ["192.168.0.1", "tendawifi.com"],
+      "credentials": [],
+      "state": "setup_required",
+      "note": {
+        "ru": "Пароль задаётся мастером первичной настройки.",
+        "en": "Password is set by the first-run wizard."
+      },
+      "source": "Tenda quick installation guide"
+    },
+    {
+      "id": "tenda-n",
+      "vendor": "Tenda",
+      "models": ["N301", "N300", "F3", "F6", "F9"],
+      "addresses": ["192.168.0.1", "tendawifi.com"],
+      "credentials": [],
+      "state": "passwordless",
+      "verified": true,
+      "note": {
+        "ru": "Заводское состояние без пароля, вход открывает мастер настройки.",
+        "en": "Factory state has no password; login opens the setup wizard."
+      },
+      "source": "N301 confirmed live"
+    },
+    {
+      "id": "keenetic",
+      "vendor": "Keenetic",
+      "addresses": ["192.168.1.1", "my.keenetic.net"],
+      "credentials": [{ "user": "admin", "password": null }],
+      "state": "setup_required",
+      "note": {
+        "ru": "Логин admin, пароль создаётся при первом входе.",
+        "en": "User admin; password is created at first login."
+      },
+      "source": "Keenetic documentation"
+    },
+    {
+      "id": "mikrotik",
+      "vendor": "MikroTik",
+      "addresses": ["192.168.88.1"],
+      "credentials": [{ "user": "admin", "password": "" }],
+      "state": "fixed",
+      "verified": true,
+      "note": {
+        "ru": "Пустой пароль. RouterOS 6.45 и новее требует задать его при первом входе.",
+        "en": "Empty password. RouterOS 6.45+ requires setting one at first login."
+      },
+      "source": "MikroTik RouterOS documentation; hAP lite confirmed live"
+    },
+    {
+      "id": "trendchip-nokia",
+      "vendor": "Nokia",
+      "models": ["G-140W-C", "G-140W-CS"],
+      "addresses": ["192.168.1.1"],
+      "credentials": [{ "user": "admin", "password": "admin" }],
+      "state": "fixed",
+      "verified": true,
+      "note": {
+        "ru": "GPON ONT. У провайдерских прошивок пароль часто на наклейке.",
+        "en": "GPON ONT. ISP firmware often prints the password on the label."
+      },
+      "source": "G-140W-C confirmed live"
+    },
+    {
+      "id": "phicomm",
+      "vendor": "Phicomm / Lee Home / Leewifi",
+      "models": ["DGX21"],
+      "addresses": ["home.to", "192.168.1.1"],
+      "credentials": [],
+      "state": "unknown",
+      "verified": true,
+      "note": {
+        "ru": "Адрес управления подтверждён живьём, заводские учётные данные не проверены.",
+        "en": "Management address confirmed live; factory credentials not verified."
+      },
+      "source": "DGX21 confirmed live (address only)"
+    },
+    {
+      "id": "asus",
+      "vendor": "ASUS",
+      "addresses": ["192.168.1.1", "router.asus.com"],
+      "credentials": [{ "user": "admin", "password": "admin" }],
+      "state": "fixed",
+      "note": {
+        "ru": "Новые прошивки просят задать пароль мастером настройки.",
+        "en": "Newer firmware asks the setup wizard to set a password."
+      },
+      "source": "ASUS user guide"
+    },
+    {
+      "id": "dlink",
+      "vendor": "D-Link",
+      "addresses": ["192.168.0.1", "192.168.1.1"],
+      "credentials": [{ "user": "admin", "password": "" }],
+      "state": "fixed",
+      "note": {
+        "ru": "Пустой пароль. Часть моделей просит сменить его сразу после входа.",
+        "en": "Empty password. Some models require changing it right after login."
+      },
+      "source": "D-Link user manual"
+    },
+    {
+      "id": "netgear",
+      "vendor": "Netgear",
+      "addresses": ["192.168.1.1", "routerlogin.net"],
+      "credentials": [{ "user": "admin", "password": "password" }],
+      "state": "fixed",
+      "source": "Netgear user manual"
+    },
+    {
+      "id": "zyxel",
+      "vendor": "Zyxel",
+      "addresses": ["192.168.1.1"],
+      "credentials": [{ "user": "admin", "password": "1234" }],
+      "state": "fixed",
+      "source": "Zyxel user guide"
+    },
+    {
+      "id": "huawei",
+      "vendor": "Huawei",
+      "addresses": ["192.168.3.1", "192.168.100.1", "192.168.8.1"],
+      "credentials": [{ "user": "admin", "password": "admin" }],
+      "state": "fixed",
+      "note": {
+        "ru": "У ONT и провайдерских прошивок пароль обычно на наклейке.",
+        "en": "On ONTs and ISP firmware the password is usually on the label."
+      },
+      "source": "Huawei user guide"
+    },
+    {
+      "id": "zte",
+      "vendor": "ZTE",
+      "addresses": ["192.168.1.1", "192.168.0.1"],
+      "credentials": [{ "user": "admin", "password": "admin" }],
+      "state": "fixed",
+      "note": {
+        "ru": "У провайдерских прошивок пароль обычно на наклейке.",
+        "en": "On ISP firmware the password is usually on the label."
+      },
+      "source": "ZTE user guide"
+    },
+    {
+      "id": "xiaomi",
+      "vendor": "Xiaomi",
+      "addresses": ["192.168.31.1", "miwifi.com"],
+      "credentials": [],
+      "state": "setup_required",
+      "note": {
+        "ru": "Пароль задаётся при настройке, обычно через приложение Mi Home.",
+        "en": "Password is set during setup, usually via the Mi Home app."
+      },
+      "source": "Xiaomi router documentation"
+    },
+    {
+      "id": "mercusys",
+      "vendor": "Mercusys",
+      "addresses": ["192.168.1.1", "mwlogin.net"],
+      "credentials": [],
+      "state": "setup_required",
+      "note": {
+        "ru": "Пароль создаётся при первом входе.",
+        "en": "Password is created at first login."
+      },
+      "source": "Mercusys quick installation guide"
+    },
+    {
+      "id": "totolink",
+      "vendor": "Totolink",
+      "addresses": ["192.168.0.1", "192.168.1.1"],
+      "credentials": [{ "user": "admin", "password": "admin" }],
+      "state": "fixed",
+      "source": "Totolink user manual"
+    },
+    {
+      "id": "netis",
+      "vendor": "Netis",
+      "addresses": ["192.168.1.1", "netis.cc"],
+      "credentials": [{ "user": "guest", "password": "guest" }],
+      "state": "fixed",
+      "note": {
+        "ru": "Часть моделей пускает в веб-интерфейс без пароля.",
+        "en": "Some models open the web interface with no password."
+      },
+      "source": "Netis user manual"
+    },
+    {
+      "id": "eltex",
+      "vendor": "Eltex",
+      "addresses": ["192.168.1.1"],
+      "credentials": [{ "user": "admin", "password": "password" }],
+      "state": "fixed",
+      "source": "Eltex user manual"
+    },
+    {
+      "id": "rotek",
+      "vendor": "Rotek",
+      "addresses": ["192.168.1.1"],
+      "credentials": [{ "user": "admin", "password": "admin" }],
+      "state": "fixed",
+      "source": "Rotek user manual"
+    },
+    {
+      "id": "sagemcom",
+      "vendor": "Sagemcom",
+      "addresses": ["192.168.1.1"],
+      "credentials": [{ "user": "admin", "password": "admin" }],
+      "state": "fixed",
+      "note": {
+        "ru": "Провайдерские F@st часто используют пароль с наклейки.",
+        "en": "ISP-branded F@st units often use the label password."
+      },
+      "source": "Sagemcom F@st user manual"
+    },
+    {
+      "id": "sercomm",
+      "vendor": "Sercomm",
+      "addresses": ["192.168.1.1"],
+      "credentials": [{ "user": "admin", "password": "admin" }],
+      "state": "fixed",
+      "source": "Sercomm user manual"
+    },
+    {
+      "id": "technicolor",
+      "vendor": "Technicolor",
+      "addresses": ["192.168.1.1"],
+      "credentials": [{ "user": "admin", "password": "admin" }],
+      "state": "fixed",
+      "note": {
+        "ru": "У провайдерских прошивок пароль обычно на наклейке.",
+        "en": "On ISP firmware the password is usually on the label."
+      },
+      "source": "Technicolor user manual"
+    },
+    {
+      "id": "cudy",
+      "vendor": "Cudy",
+      "addresses": ["192.168.10.1"],
+      "credentials": [{ "user": "admin", "password": "admin" }],
+      "state": "fixed",
+      "source": "Cudy quick installation guide"
+    },
+    {
+      "id": "openwrt",
+      "vendor": "OpenWrt",
+      "addresses": ["192.168.1.1"],
+      "credentials": [{ "user": "root", "password": "" }],
+      "state": "passwordless",
+      "note": {
+        "ru": "Свежая установка без пароля, LuCI требует задать его при первом входе.",
+        "en": "A fresh install has no password; LuCI requires setting one at first login."
+      },
+      "source": "OpenWrt documentation"
+    },
+    {
+      "id": "ddwrt",
+      "vendor": "DD-WRT",
+      "addresses": ["192.168.1.1"],
+      "credentials": [{ "user": "root", "password": "admin" }],
+      "state": "fixed",
+      "source": "DD-WRT documentation"
+    },
+    {
+      "id": "padavan",
+      "vendor": "Padavan",
+      "addresses": ["192.168.1.1"],
+      "credentials": [{ "user": "admin", "password": "admin" }],
+      "state": "fixed",
+      "source": "Padavan firmware documentation"
+    },
+    {
+      "id": "ubiquiti-airos",
+      "vendor": "Ubiquiti",
+      "models": ["NanoStation", "NanoBeam", "LiteBeam", "PowerBeam", "Rocket"],
+      "addresses": ["192.168.1.20"],
+      "credentials": [{ "user": "ubnt", "password": "ubnt" }],
+      "state": "fixed",
+      "note": {
+        "ru": "airOS. UniFi-точки задают учётные данные при adoption.",
+        "en": "airOS. UniFi devices take their credentials at adoption."
+      },
+      "source": "Ubiquiti airOS documentation"
+    }
+  ]
+}
