@@ -103,6 +103,66 @@ python3 validate.py
 
 A non-zero exit code means the file must not be published.
 
+## userscripts.json — catalogue of userscripts
+
+Scripts a technician can install into NetWrench's built-in browser with one
+tap. NetWrench runs them the way Violentmonkey or Tampermonkey do, against the
+sites their own `@match` names — most usefully against a router's management
+panel or an operator's internal tool, which are built for a desktop screen and
+are painful on a phone until somebody patches them.
+
+This file is a list of addresses, not the code. The application fetches the
+catalogue, shows what is in it, and downloads the chosen `.user.js` from the
+address the entry names — so a script's author keeps publishing it wherever
+they already do, and updates it there without touching this repository.
+
+### Format
+
+```json
+{
+  "schema": 1,
+  "version": 1,
+  "updated": "2026-09-23",
+  "entries": [
+    {
+      "id": "we-orders-fixes",
+      "name": "WE — правки «Мої наряди»",
+      "description": "Правки інтерфейсу списку нарядів CRM Westelecom.",
+      "author": "zortald",
+      "matches": ["https://crm.westele.com.ua/*"],
+      "url": "https://gist.githubusercontent.com/…/we-orders-fixes.user.js"
+    }
+  ]
+}
+```
+
+`version` is an integer that grows with every change.
+
+| Field | Meaning |
+| --- | --- |
+| `id` | stable identifier, `a-z0-9-`; never reused for a different script |
+| `name`, `description` | what the catalogue shows before anything is downloaded |
+| `author` | who publishes it, so a reader knows whose code they are about to run |
+| `matches` | the sites it claims, copied from the script's own `@match` |
+| `url` | the raw `.user.js`, **https only** |
+
+The name, version and match patterns the application finally stores come from
+the downloaded file's own header, never from this catalogue: the two would
+otherwise drift apart, and the header is the one that runs.
+
+`url` must be https. What arrives is executed inside a page the technician is
+logged into, and the phone is frequently on somebody else's network — often
+the very router being repaired, which is exactly the path that could rewrite a
+cleartext download.
+
+### Check before publishing
+
+```sh
+python3 validate-userscripts.py
+```
+
+A non-zero exit code means the file must not be published.
+
 ## Licence and provenance
 
 The file is compiled by hand from vendor manuals and from devices verified
