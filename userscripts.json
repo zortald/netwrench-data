@@ -1,6 +1,6 @@
 {
   "schema": 1,
-  "version": 1,
+  "version": 2,
   "updated": "2026-09-23",
   "entries": [
     {
@@ -8,8 +8,30 @@
       "name": "WE — правки «Мої наряди»",
       "description": "Правки інтерфейсу списку нарядів CRM Westelecom.",
       "author": "zortald",
-      "matches": ["https://crm.westele.com.ua/*"],
+      "matches": [
+        "https://crm.westele.com.ua/*"
+      ],
       "url": "https://gist.githubusercontent.com/zortald/bc2bb9d4e6bedfac8afe88500dd2f557/raw/we-orders-fixes.user.js"
+    },
+    {
+      "id": "we-order-view",
+      "name": "WE — правки сторінки наряду",
+      "description": "Вкладки наряду (наряд / техніка / звіт / історія) і чистка повторів.",
+      "author": "zortald",
+      "matches": [
+        "https://crm.westele.com.ua/*"
+      ],
+      "url": "https://gist.githubusercontent.com/zortald/a7a6bcf2c814aead3b92ce93ace2d731/raw/we-order-view.user.js"
+    },
+    {
+      "id": "we-handover",
+      "name": "WE — правки «Передача бригаді»",
+      "description": "Пошук по списку обладнання на сторінці передачі між бригадами.",
+      "author": "zortald",
+      "matches": [
+        "https://crm.westele.com.ua/*"
+      ],
+      "url": "https://gist.githubusercontent.com/zortald/c22ec340bf897fc93327e95912e9b2b0/raw/we-handover.user.js"
     }
   ]
 }
