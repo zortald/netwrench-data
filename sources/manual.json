@@ -1,0 +1,32 @@
+{
+ "note": "Факты со страниц производителей. У каждой записи sources — страница, с которой они переписаны. Только факты: тексты и картинки не копируются.",
+ "devices": [
+  {
+   "vendor": "MikroTik",
+   "model": "E62iUGS-2axD5axT",
+   "aliases": ["hAP ax S"],
+   "type": "router",
+   "bands": {"2.4": "wifi6", "5": "wifi6"},
+   "ports": {"100m": 0, "1g": 5, "2.5g": 0, "5g": 0, "10g": 0, "sfp": 1, "sfp+": 0},
+   "sources": ["https://mikrotik.com/product/hap_ax_s", "https://help.mikrotik.com/docs/spaces/UM/pages/348782676/hAP+ax+S"]
+  },
+  {
+   "vendor": "MikroTik",
+   "model": "C52iG-5HaxD2HaxD-TC",
+   "aliases": ["hAP ax²", "hAP ax2"],
+   "type": "router",
+   "bands": {"2.4": "wifi6", "5": "wifi6"},
+   "ports": {"100m": 0, "1g": 5, "2.5g": 0, "5g": 0, "10g": 0, "sfp": 0, "sfp+": 0},
+   "sources": ["https://mikrotik.com/product/hap_ax2"]
+  },
+  {
+   "vendor": "netis",
+   "model": "WF2419E",
+   "type": "router",
+   "bands": {"2.4": "wifi4"},
+   "ports": {"100m": 5, "1g": 0, "2.5g": 0, "5g": 0, "10g": 0, "sfp": 0, "sfp+": 0},
+   "externalAntennas": 2,
+   "sources": ["https://www.netis-systems.com/products/WF2419E.html"]
+  }
+ ]
+}

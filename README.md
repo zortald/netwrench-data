@@ -163,11 +163,62 @@ python3 validate-userscripts.py
 
 A non-zero exit code means the file must not be published.
 
+## router-catalog.json — model catalogue
+
+Hardware facts by model and revision: which Wi-Fi bands of which generation,
+how many ports at what speed, whether the antennas are external, whether the
+model is discontinued. NetWrench shows them on the "My router" card when the
+router itself does not say so without a password — and no router states its
+ports before a login.
+
+The file is not edited by hand: `build_catalog.py` builds it from `sources/`.
+
+| Source | What it is | Priority |
+| --- | --- | --- |
+| `sources/toh.json` | Snapshot of the OpenWrt Table of Hardware, only the columns and device types needed | lowest |
+| `sources/manual.json` | Facts from vendor pages, each entry with its URL | higher |
+| `sources/verified.json` | What was seen on the test rig | highest |
+
+A field from a higher-priority source overrides the same field from a lower
+one. Each entry's `origin` says where each fact came from, `sources` lists the
+links. A fact a source did not state is left out: unknown is not zero.
+
+```sh
+python3 build_catalog.py --fetch-toh   # refresh the ToH snapshot, then build
+python3 build_catalog.py               # build from what is in sources/
+python3 validate_catalog.py            # check before publishing
+```
+
+An entry:
+
+| Field | Meaning |
+| --- | --- |
+| `vendor`, `model`, `aliases` | As the detector names the model; `aliases` are marketing names and variants (`hAP ac³`, `TL-WR841ND`) |
+| `revisions` | Hardware revisions (`v3`). No field — revisions are not distinguished |
+| `type` | `router`, `ap`, `modem`, `extender` |
+| `bands` | `{"2.4": "wifi4", "5": "wifi5"}`; a band missing from the object has no radio. No field — unknown |
+| `ports` | Port count by speed: `100m`, `1g`, `2.5g`, `5g`, `10g`, `sfp`, `sfp+`. All kinds or none |
+| `detachableAntennas` | Detachable antennas (as ToH counts them; 0 does not mean "no antennas") |
+| `externalAntennas` | External antennas, detachable or not, from the vendor page |
+| `status`, `availableAsOf` | `discontinued` / `available` and the year ToH's note refers to |
+| `fccId` | FCC ID where known. No grant date: the FCC sites refuse automated requests, and we do not work around that |
+
+One model with several revisions is several entries. The application shows a
+fact only when every matching revision agrees on it.
+
 ## Licence and provenance
 
-The file is compiled by hand from vendor manuals and from devices verified
-during development. It is not a copy of anyone else's database: no ready-made
-dataset was taken (including from the EU, where the sui generis database right
-applies), and none may be — NetWrench is distributed as a paid product.
+`router-defaults.json` is compiled by hand from vendor manuals and from devices
+verified during development.
+
+Other people's databases are not taken wholesale (in the EU the sui generis
+database right applies, and NetWrench is a paid product). The one exception is
+a database released under a licence that expressly permits it, and only on that
+licence's terms. Today that is a single database: the OpenWrt Table of Hardware,
+CC BY-SA 4.0, in `router-catalog.json`. Hence `router-catalog.json` and
+`sources/toh.json` are distributed under **CC BY-SA 4.0** with attribution to
+OpenWrt (recorded in the file itself). Individual facts — port counts, Wi-Fi
+standards — are carried over from vendor pages one at a time, with a link to the
+page; no text or images are copied.
 
 Entries marked `"verified": true` were confirmed on real hardware.
