@@ -1,10 +1,15 @@
 /**
- * NetWrench — приёмник отчётов «Сообщить о модели».
+ * NetWrench — приёмник отчётов «Помочь добавить роутер».
  *
  * Веб-приложение Google Apps Script, привязанное к таблице. Приложение
- * присылает POST с JSON (RouterReport, схемы 1–2), скрипт проверяет его и
- * дописывает строку на лист «reports». Ключей и секретов здесь нет: адрес
- * веб-приложения публичный, поэтому от мусора защищают только проверки ниже.
+ * присылает POST с JSON (RouterReport, схемы 1–3), скрипт проверяет его и
+ * дописывает строку на лист «reports». Схема 3 несёт улики — страницы веб-
+ * интерфейса, заголовки, открытые порты, MNDP, UPnP — то, что роутер показывает
+ * без входа; отчёт целиком ложится JSON-файлом в папку Диска
+ * REPORTS_FOLDER, а в строку идёт сводка и ссылка на файл.
+ *
+ * Ключей и секретов здесь нет: адрес веб-приложения публичный, поэтому от
+ * мусора защищают только проверки ниже.
  *
  * Развёртывание:
  *   1. Создать Google Таблицу, Расширения → Apps Script, вставить этот файл.
@@ -22,22 +27,27 @@
  */
 
 const SHEET_NAME = 'reports';
-const SCHEMAS = [1, 2];
+const REPORTS_FOLDER = 'NetWrench router reports';
+const SCHEMAS = [1, 2, 3];
 /** Больше стольких отчётов в минуту со всех телефонов вместе — это не люди. */
 const MAX_PER_MINUTE = 30;
 /**
  * Повтор с того же устройства не пишется столько секунд. Устройство — это
- * случайный device из схемы 2 (телефон выдаёт его каждому роутеру); без него —
+ * случайный device из схемы 2+ (телефон выдаёт его каждому роутеру); без него —
  * отчёт целиком. Не «производитель + модель»: у неопознанных роутеров модели
  * нет, и такой ключ склеил бы разные устройства в одно.
  */
 const DUPLICATE_WINDOW_SECONDS = 6 * 60 * 60;
+/** Отчёт с уликами — сотни килобайт: страницы целиком. Больше — уже не отчёт. */
+const MAX_BODY_CHARS = 5000000;
 const MAX_FIELD = 120;
+const MAX_CELL = 2000;
 const MAX_RADIOS = 4;
 const BANDS = ['2.4', '5', '6', 'unknown'];
 const CATALOG = ['none', 'partial', 'full'];
 const COLUMNS = ['received', 'app', 'vendor', 'model', 'firmware', 'oui', 'detectedBy',
-  'confidence', 'catalog', 'radios', 'device'];
+  'confidence', 'catalog', 'radios', 'device',
+  'ports', 'servers', 'titles', 'mndp', 'upnp', 'evidence'];
 const UUID = /^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/;
 
 function doPost(e) {
@@ -54,6 +64,8 @@ function doPost(e) {
     const dupKey = 'dup:' + digest_(report.device ? 'device|' + report.device : e.postData.contents);
     if (cache.get(dupKey)) return reply_(true, null, true);
 
+    const ev = report.evidence;
+    const fileUrl = ev ? saveEvidence_(report, e.postData.contents) : '';
     const lock = LockService.getScriptLock();
     lock.waitLock(10000);
     try {
@@ -63,8 +75,15 @@ function doPost(e) {
         report.radios.map(function (r) {
           return [r.band, r.standard || '?', r.security || '?'].join(' ');
         }).join('; '),
-        report.device
-      ]);
+        report.device,
+        ev ? (ev.openPorts || []).join(' ') : '',
+        ev ? summary_(ev.pages, function (p) { return header_(p, 'server'); }) : '',
+        ev ? summary_(ev.pages, function (p) { return title_(p.body); }) : '',
+        ev && ev.mndp ? JSON.stringify(ev.mndp) : '',
+        ev ? (ev.upnp || []).map(function (u) { return tag_(u.description, 'modelName'); })
+          .filter(String).join('; ') : '',
+        fileUrl
+      ].map(cell_));
     } finally {
       lock.releaseLock();
     }
@@ -75,17 +94,17 @@ function doPost(e) {
   }
 }
 
-/** Только то, что описывает модель; всё остальное — отказ, а не молчаливая чистка. */
+/** Поля модели проверяются строго; улики — только по форме: это сырой материал, а не данные для таблицы. */
 function parse_(e) {
-  if (!e || !e.postData || !e.postData.contents || e.postData.contents.length > 4000) return null;
+  if (!e || !e.postData || !e.postData.contents || e.postData.contents.length > MAX_BODY_CHARS) return null;
   const r = JSON.parse(e.postData.contents);
   if (SCHEMAS.indexOf(r.schema) < 0) return null;
   const allowed = ['schema', 'app', 'vendor', 'model', 'firmware', 'oui', 'detectedBy',
-    'confidence', 'radios', 'catalog', 'device'];
+    'confidence', 'radios', 'catalog', 'device', 'evidence'];
   if (Object.keys(r).some(function (k) { return allowed.indexOf(k) < 0; })) return null;
   if (!text_(r.app, true) || !text_(r.confidence, true)) return null;
   if (!text_(r.vendor) || !text_(r.model) || !text_(r.firmware) || !text_(r.detectedBy)) return null;
-  if (!r.vendor && !r.model) return null;
+  if (!r.vendor && !r.model && !r.evidence) return null;
   if (r.oui != null && !/^[0-9A-F]{2}:[0-9A-F]{2}:[0-9A-F]{2}$/.test(r.oui)) return null;
   if (CATALOG.indexOf(r.catalog) < 0) return null;
   if (r.device != null && !UUID.test(r.device)) return null;
@@ -93,17 +112,70 @@ function parse_(e) {
   if (!r.radios.every(function (x) {
     return x && BANDS.indexOf(x.band) >= 0 && text_(x.standard) && text_(x.security);
   })) return null;
+  if (r.evidence != null && (typeof r.evidence !== 'object' || Array.isArray(r.evidence) ||
+      !Array.isArray(r.evidence.pages) || !Array.isArray(r.evidence.openPorts))) return null;
   return {
     app: r.app, vendor: r.vendor || '', model: r.model || '', firmware: r.firmware || '',
     oui: r.oui || '', detectedBy: r.detectedBy || '', confidence: r.confidence,
-    catalog: r.catalog, radios: r.radios, device: r.device || ''
+    catalog: r.catalog, radios: r.radios, device: r.device || '', evidence: r.evidence || null
   };
+}
+
+/** Отчёт целиком — файлом: страницы роутера не влезают в ячейку и не должны в неё влезать. */
+function saveEvidence_(report, contents) {
+  const folders = DriveApp.getFoldersByName(REPORTS_FOLDER);
+  const folder = folders.hasNext() ? folders.next() : DriveApp.createFolder(REPORTS_FOLDER);
+  const stamp = Utilities.formatDate(new Date(), 'UTC', "yyyyMMdd'T'HHmmss'Z'");
+  const name = [stamp, report.vendor || 'unknown', report.model || 'unknown',
+    (report.device || 'nodevice').slice(0, 8)].join(' ').replace(/[\\/:*?"<>|]/g, '_') + '.json';
+  return folder.createFile(name, contents, 'application/json').getUrl();
+}
+
+/** «порт: значение» для каждой ответившей страницы, без повторов. */
+function summary_(pages, pick) {
+  const seen = {};
+  return (pages || []).map(function (p) {
+    const v = pick(p);
+    if (!v) return '';
+    const line = port_(p.url) + ': ' + v;
+    if (seen[line]) return '';
+    seen[line] = true;
+    return line;
+  }).filter(String).join('; ');
+}
+
+function header_(page, name) {
+  const h = page.headers || {};
+  for (const k in h) if (k.toLowerCase() === name) return h[k];
+  return '';
+}
+
+function title_(html) {
+  const m = /<title[^>]*>([\s\S]*?)<\/title>/i.exec(html || '');
+  return m ? m[1].replace(/\s+/g, ' ').trim() : '';
+}
+
+function tag_(xml, name) {
+  const m = new RegExp('<' + name + '>([\\s\\S]*?)</' + name + '>', 'i').exec(xml || '');
+  return m ? m[1].trim() : '';
+}
+
+function port_(url) {
+  const m = /^(\w+):\/\/[^/]*?:(\d+)/.exec(url || '');
+  return m ? m[1] + ':' + m[2] : url;
 }
 
 /** Строка до MAX_FIELD символов; null допустим, если не required. Формулы в таблицу не пускаем. */
 function text_(v, required) {
   if (v == null) return !required;
   return typeof v === 'string' && v.length > 0 && v.length <= MAX_FIELD && !/^[=+\-@]/.test(v);
+}
+
+/** Ячейка из чужого текста: обрезана и никогда не формула. */
+function cell_(v) {
+  if (typeof v !== 'string') return v;
+  const s = v.length > MAX_CELL ? v.slice(0, MAX_CELL) + '…' : v;
+  return /^[=+\-@]/.test(s) ? "'" + s : s;
 }
 
 function sheet_() {
