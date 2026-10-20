@@ -215,6 +215,18 @@ An entry:
 One model with several revisions is several entries. The application shows a
 fact only when every matching revision agrees on it.
 
+## intake/router-report.gs — "Report this model"
+
+A Google Apps Script web app bound to the project's table. The app's "Report
+this model" button posts one JSON report (vendor, model, firmware, the MAC's
+vendor block, the bands heard, the build) when the catalogue lacks the model's
+specification; the script checks it and appends a row. No address, full MAC,
+device name or SSID is ever sent. The web app's address is public, so the script
+refuses unknown fields, over-long values and more than 30 reports a minute, and
+writes the same model and firmware once per six hours. Deployment steps are at
+the top of the file; the address goes to the app as the Gradle property
+`netwrench.routerReportUrl`.
+
 ## Licence and provenance
 
 `router-defaults.json` is compiled by hand from vendor manuals and from devices
