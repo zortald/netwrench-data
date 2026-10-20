@@ -201,7 +201,11 @@ def overlay(base, patch, source):
         if field in patch:
             merged[field] = patch[field]
             origin[field] = source
-    merged["aliases"] = list(dict.fromkeys(base.get("aliases", []) + patch.get("aliases", [])))
+    # Написание из патча главнее: ToH пишет «hap ac³», производитель — «hAP ac³».
+    aliases = {}
+    for a in patch.get("aliases", []) + base.get("aliases", []):
+        aliases.setdefault(a.casefold(), a)
+    merged["aliases"] = list(aliases.values())
     merged["origin"] = origin
     merged["sources"] = base.get("sources", []) + [s for s in patch.get("sources", []) if s not in base.get("sources", [])]
     return merged
