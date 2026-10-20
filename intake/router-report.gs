@@ -2,7 +2,7 @@
  * NetWrench — приёмник отчётов «Сообщить о модели».
  *
  * Веб-приложение Google Apps Script, привязанное к таблице. Приложение
- * присылает POST с JSON (RouterReport, схема 1), скрипт проверяет его и
+ * присылает POST с JSON (RouterReport, схемы 1–2), скрипт проверяет его и
  * дописывает строку на лист «reports». Ключей и секретов здесь нет: адрес
  * веб-приложения публичный, поэтому от мусора защищают только проверки ниже.
  *
@@ -12,23 +12,33 @@
  *      «Выполнять от имени» — я, «У кого есть доступ» — все.
  *   3. Адрес вида https://script.google.com/macros/s/…/exec передать в
  *      приложение (gradle-свойство netwrench.routerReportUrl).
+ *   4. Открыть этот адрес в браузере владельцем: пока там «Authorization
+ *      needed», любой запрос получает 403. Разрешение просится заново после
+ *      каждой новой версии (Управление развёртываниями → карандаш → Новая
+ *      версия; адрес при этом не меняется).
  *
  * Ответ всегда JSON: {"ok":true} — строка записана (или такая уже была);
  * {"ok":false,"error":"…"} — отказ. Приложение считает отправленным только первое.
  */
 
 const SHEET_NAME = 'reports';
-const SCHEMA = 1;
+const SCHEMAS = [1, 2];
 /** Больше стольких отчётов в минуту со всех телефонов вместе — это не люди. */
 const MAX_PER_MINUTE = 30;
-/** Одинаковый отчёт (производитель, модель, прошивка) повторно не пишется столько секунд. */
+/**
+ * Повтор с того же устройства не пишется столько секунд. Устройство — это
+ * случайный device из схемы 2 (телефон выдаёт его каждому роутеру); без него —
+ * отчёт целиком. Не «производитель + модель»: у неопознанных роутеров модели
+ * нет, и такой ключ склеил бы разные устройства в одно.
+ */
 const DUPLICATE_WINDOW_SECONDS = 6 * 60 * 60;
 const MAX_FIELD = 120;
 const MAX_RADIOS = 4;
 const BANDS = ['2.4', '5', '6', 'unknown'];
 const CATALOG = ['none', 'partial', 'full'];
 const COLUMNS = ['received', 'app', 'vendor', 'model', 'firmware', 'oui', 'detectedBy',
-  'confidence', 'catalog', 'radios'];
+  'confidence', 'catalog', 'radios', 'device'];
+const UUID = /^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/;
 
 function doPost(e) {
   try {
@@ -41,7 +51,7 @@ function doPost(e) {
     if (sent >= MAX_PER_MINUTE) return reply_(false, 'rate');
     cache.put(minuteKey, String(sent + 1), 120);
 
-    const dupKey = 'dup:' + digest_([report.vendor, report.model, report.firmware].join('|'));
+    const dupKey = 'dup:' + digest_(report.device ? 'device|' + report.device : e.postData.contents);
     if (cache.get(dupKey)) return reply_(true, null, true);
 
     const lock = LockService.getScriptLock();
@@ -52,7 +62,8 @@ function doPost(e) {
         report.detectedBy, report.confidence, report.catalog,
         report.radios.map(function (r) {
           return [r.band, r.standard || '?', r.security || '?'].join(' ');
-        }).join('; ')
+        }).join('; '),
+        report.device
       ]);
     } finally {
       lock.releaseLock();
@@ -68,15 +79,16 @@ function doPost(e) {
 function parse_(e) {
   if (!e || !e.postData || !e.postData.contents || e.postData.contents.length > 4000) return null;
   const r = JSON.parse(e.postData.contents);
-  if (r.schema !== SCHEMA) return null;
+  if (SCHEMAS.indexOf(r.schema) < 0) return null;
   const allowed = ['schema', 'app', 'vendor', 'model', 'firmware', 'oui', 'detectedBy',
-    'confidence', 'radios', 'catalog'];
+    'confidence', 'radios', 'catalog', 'device'];
   if (Object.keys(r).some(function (k) { return allowed.indexOf(k) < 0; })) return null;
   if (!text_(r.app, true) || !text_(r.confidence, true)) return null;
   if (!text_(r.vendor) || !text_(r.model) || !text_(r.firmware) || !text_(r.detectedBy)) return null;
   if (!r.vendor && !r.model) return null;
   if (r.oui != null && !/^[0-9A-F]{2}:[0-9A-F]{2}:[0-9A-F]{2}$/.test(r.oui)) return null;
   if (CATALOG.indexOf(r.catalog) < 0) return null;
+  if (r.device != null && !UUID.test(r.device)) return null;
   if (!Array.isArray(r.radios) || r.radios.length > MAX_RADIOS) return null;
   if (!r.radios.every(function (x) {
     return x && BANDS.indexOf(x.band) >= 0 && text_(x.standard) && text_(x.security);
@@ -84,7 +96,7 @@ function parse_(e) {
   return {
     app: r.app, vendor: r.vendor || '', model: r.model || '', firmware: r.firmware || '',
     oui: r.oui || '', detectedBy: r.detectedBy || '', confidence: r.confidence,
-    catalog: r.catalog, radios: r.radios
+    catalog: r.catalog, radios: r.radios, device: r.device || ''
   };
 }
 
@@ -99,9 +111,10 @@ function sheet_() {
   let sheet = book.getSheetByName(SHEET_NAME);
   if (!sheet) {
     sheet = book.insertSheet(SHEET_NAME);
-    sheet.appendRow(COLUMNS);
     sheet.setFrozenRows(1);
   }
+  // Заголовок всегда по текущему COLUMNS: новая колонка в схеме — новая ячейка в шапке.
+  sheet.getRange(1, 1, 1, COLUMNS.length).setValues([COLUMNS]);
   return sheet;
 }
 

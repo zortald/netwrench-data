@@ -225,7 +225,9 @@ device name or SSID is ever sent. The web app's address is public, so the script
 refuses unknown fields, over-long values and more than 30 reports a minute, and
 writes the same model and firmware once per six hours. Deployment steps are at
 the top of the file; the address goes to the app as the Gradle property
-`netwrench.routerReportUrl`.
+`netwrench.routerReportUrl`. After every new version Google asks the owner
+to authorise the web app again, and answers 403 to everyone until then: open
+the `/exec` address in a browser and grant it.
 
 ## Licence and provenance
 
