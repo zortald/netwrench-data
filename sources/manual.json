@@ -8,6 +8,9 @@
    "type": "router",
    "bands": {"2.4": "wifi6", "5": "wifi6"},
    "ports": {"100m": 0, "1g": 5, "2.5g": 0, "5g": 0, "10g": 0, "sfp": 1, "sfp+": 0},
+   "cpu": "EN7562CT", "cpuCores": 2, "cpuMhz": 950, "ramMb": 512, "flashMb": 128,
+   "powerSupply": "12-28 VDC, 18-28V Passive PoE", "outdoor": false,
+   "oemUrl": "https://mikrotik.com/product/hap_ax_s", "firmwareUrl": "https://mikrotik.com/download",
    "sources": ["https://mikrotik.com/product/hap_ax_s", "https://help.mikrotik.com/docs/spaces/UM/pages/348782676/hAP+ax+S"]
   },
   {

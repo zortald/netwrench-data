@@ -202,6 +202,15 @@ An entry:
 | `externalAntennas` | External antennas, detachable or not, from the vendor page |
 | `status`, `availableAsOf` | `discontinued` / `available` and the year ToH's note refers to |
 | `fccId` | FCC ID where known. No grant date: the FCC sites refuse automated requests, and we do not work around that |
+| `cpu`, `cpuCores`, `cpuMhz` | The SoC as ToH names it, its cores and clock |
+| `ramMb`, `flashMb` | Memory; `flashMb` is built-in flash only — a card slot or eMMC with no stated size is not counted |
+| `mimo` | Radio chains as `2x2:2`, only where ToH gives one scheme for every band |
+| `openwrtSince`, `openwrtCurrent` | First and newest OpenWrt release for the model; `EOL` once its builds were dropped |
+| `powerSupply` | As ToH writes it: `12 VDC, 1.0A via barrel` |
+| `usb` | Host USB ports (`1x 2.0, 1x 3.0`) or `none`; power-only sockets are not listed |
+| `vlan`, `outdoor` | `true` / `false` |
+| `modem` | A built-in modem: `VDSL2`, `LTE`… |
+| `oemUrl`, `firmwareUrl` | The vendor's model page and stock firmware page, https only |
 
 One model with several revisions is several entries. The application shows a
 fact only when every matching revision agrees on it.

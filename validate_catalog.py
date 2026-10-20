@@ -5,6 +5,7 @@
 Ненулевой код возврата — файл публиковать нельзя.
 """
 import json
+import re
 import sys
 
 SCHEMA = 1
@@ -12,7 +13,11 @@ TYPES = {"router", "ap", "modem", "extender"}
 BANDS = {"2.4", "5", "6"}
 GENERATIONS = {"legacy", "wifi4", "wifi5", "wifi6", "wifi7"}
 PORT_KEYS = {"100m", "1g", "2.5g", "5g", "10g", "sfp", "sfp+"}
-FACTS = {"bands", "ports", "detachableAntennas", "externalAntennas", "status", "availableAsOf", "fccId"}
+FACTS = {
+    "bands", "ports", "detachableAntennas", "externalAntennas", "status", "availableAsOf", "fccId",
+    "cpu", "cpuCores", "cpuMhz", "ramMb", "flashMb", "mimo", "openwrtSince", "openwrtCurrent",
+    "powerSupply", "oemUrl", "firmwareUrl", "outdoor", "modem", "usb", "vlan",
+}
 ORIGINS = {"toh", "manual", "verified"}
 STATUSES = {"available", "discontinued"}
 
@@ -53,6 +58,20 @@ def check_device(d, errors):
         elif not all(isinstance(v, int) and v >= 0 for v in ports.values()):
             errors.append(f"{where}: в ports не целые неотрицательные числа")
 
+    for field in ("cpuCores", "cpuMhz", "ramMb", "flashMb"):
+        if field in d and not (isinstance(d[field], int) and d[field] > 0):
+            errors.append(f"{where}: {field} должен быть целым положительным")
+    for field in ("outdoor", "vlan"):
+        if field in d and not isinstance(d[field], bool):
+            errors.append(f"{where}: {field} должен быть true/false")
+    for field in ("oemUrl", "firmwareUrl"):
+        if field in d and not (isinstance(d[field], str) and d[field].startswith("https://")):
+            errors.append(f"{where}: {field} — только https")
+    if "mimo" in d and not re.fullmatch(r"\dx\d(:\d)?", str(d["mimo"])):
+        errors.append(f"{where}: mimo {d['mimo']!r} не вида 2x2:2")
+    for field in ("openwrtSince", "openwrtCurrent"):
+        if field in d and not re.fullmatch(r"EOL|\d+\.\d+(\.\d+)?", str(d[field])):
+            errors.append(f"{where}: {field} {d[field]!r} — не релиз OpenWrt")
     for field in ("detachableAntennas", "externalAntennas", "availableAsOf"):
         if field in d and not (isinstance(d[field], int) and d[field] >= 0):
             errors.append(f"{where}: {field} должен быть целым неотрицательным")

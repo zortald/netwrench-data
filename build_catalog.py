@@ -69,8 +69,16 @@ PORT_FIELDS = {
 TOH_COLUMNS = [
     "deviceid", "brand", "model", "version", "devicetype", "availability",
     "wlan24ghz", "wlan50ghz", "detachableantennas", "fccid", *PORT_FIELDS.values(),
+    # Характеристики для Pro-карточки.
+    "cpu", "cpucores", "cpumhz", "rammb", "flashmb", "wlancomments",
+    "supportedsincerel", "supportedcurrentrel", "powersupply",
+    "oemdevicehomepageurl", "firmwareoemstockurl", "outdoor", "modem", "usbports", "vlan",
 ]
-FACT_FIELDS = ("bands", "ports", "detachableAntennas", "externalAntennas", "status", "availableAsOf", "fccId")
+FACT_FIELDS = (
+    "bands", "ports", "detachableAntennas", "externalAntennas", "status", "availableAsOf", "fccId",
+    "cpu", "cpuCores", "cpuMhz", "ramMb", "flashMb", "mimo", "openwrtSince", "openwrtCurrent",
+    "powerSupply", "oemUrl", "firmwareUrl", "outdoor", "modem", "usb", "vlan",
+)
 
 
 def vendor_name(raw):
@@ -120,6 +128,54 @@ def count(raw):
     if raw == "-":
         return 0
     return int(raw) if raw.isdigit() else None
+
+
+def text(raw):
+    """Строка ToH без пустых значений-заглушек: '-', '¿', пусто → неизвестно."""
+    if raw is None:
+        return None
+    raw = str(raw).strip()
+    return None if raw in ("", "-", "¿") else raw
+
+
+def yes_no(raw):
+    raw = (text(raw) or "").lower()
+    return True if raw == "yes" else False if raw == "no" else None
+
+
+def flash_mb(raw):
+    """['32', '128NAND', 'microSD'] → 32: первая встроенная память; карты и eMMC без размера — не она."""
+    for item in raw or []:
+        m = re.fullmatch(r"(\d+)\s*(NAND|NOR)?", str(item).strip(), re.I)
+        if m:
+            return int(m.group(1))
+    return None
+
+
+def mimo(raw):
+    """'MIMO 2x2:2 on both bands' → '2x2:2'. Только когда в тексте одна схема на всё:
+    две разные — это разные диапазоны, а какой где, свободный текст надёжно не говорит."""
+    found = {f"{a}x{b}" + (f":{c}" if c else "")
+             for a, b, c in re.findall(r"(\d)\s*[xX]\s*(\d)(?::(\d))?", raw or "")}
+    return found.pop() if len(found) == 1 else None
+
+
+def openwrt_release(raw):
+    """'25.12.2' или 'EOL'; 'snapshot', 'external image' и прочее — не релиз."""
+    raw = text(raw)
+    return raw if raw and (raw == "EOL" or re.fullmatch(r"\d+\.\d+(\.\d+)?", raw)) else None
+
+
+def https_url(raw):
+    """Ссылка из ToH, если https; хвостовые обратные слеши и кавычки — опечатки вики."""
+    raw = (text(raw) or "").rstrip("\\'\" ")
+    return raw if raw.startswith("https://") and " " not in raw else None
+
+
+def usb(raw):
+    """['1x 2.0', '1x µUSB (power)'] → '1x 2.0': только порты под устройства, не питание."""
+    ports = [p for p in (text(v) for v in raw or []) if p and re.fullmatch(r"\d+x \d\.\d", p)]
+    return ", ".join(ports) if ports else ("none" if raw == ["-"] else None)
 
 
 def split_model(raw):
@@ -185,6 +241,21 @@ def toh_entry(row):
         "status": status,
         "availableAsOf": int(as_of.group(1)) if as_of else None,
         "fccId": fcc,
+        "cpu": text(row.get("cpu")),
+        "cpuCores": count(row.get("cpucores")) or None,
+        "cpuMhz": count(row.get("cpumhz")) or None,
+        "ramMb": count(row.get("rammb")) or None,
+        "flashMb": flash_mb(row.get("flashmb")),
+        "mimo": mimo(row.get("wlancomments")),
+        "openwrtSince": openwrt_release(row.get("supportedsincerel")),
+        "openwrtCurrent": openwrt_release(row.get("supportedcurrentrel")),
+        "powerSupply": text(row.get("powersupply")),
+        "oemUrl": https_url(row.get("oemdevicehomepageurl")),
+        "firmwareUrl": https_url(row.get("firmwareoemstockurl")),
+        "outdoor": yes_no(row.get("outdoor")),
+        "modem": text(row.get("modem")),
+        "usb": usb(row.get("usbports")),
+        "vlan": yes_no(row.get("vlan")),
     }
     return entry
 
