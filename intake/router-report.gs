@@ -22,7 +22,7 @@
  *      каждой новой версии (Управление развёртываниями → карандаш → Новая
  *      версия; адрес при этом не меняется).
  *
- * Ответ всегда JSON: {"ok":true} — строка записана (или такая уже была);
+ * Ответ всегда JSON: {"ok":true} — строка записана;
  * {"ok":false,"error":"…"} — отказ. Приложение считает отправленным только первое.
  */
 
@@ -32,12 +32,12 @@ const SCHEMAS = [1, 2, 3];
 /** Больше стольких отчётов в минуту со всех телефонов вместе — это не люди. */
 const MAX_PER_MINUTE = 30;
 /**
- * Повтор с того же устройства не пишется столько секунд. Устройство — это
- * случайный device из схемы 2+ (телефон выдаёт его каждому роутеру); без него —
- * отчёт целиком. Не «производитель + модель»: у неопознанных роутеров модели
- * нет, и такой ключ склеил бы разные устройства в одно.
+ * С одного устройства — не больше стольких в минуту. Повтор принимается всегда:
+ * второй отчёт о том же роутере бывает богаче первого (новая версия приложения,
+ * роутер поднял веб-интерфейс), и выбрасывать его как дубль — терять улики.
+ * Устройство — случайный device из схемы 2+; отчёты без него считаются одним.
  */
-const DUPLICATE_WINDOW_SECONDS = 6 * 60 * 60;
+const MAX_PER_DEVICE_PER_MINUTE = 3;
 /** Отчёт с уликами — сотни килобайт: страницы целиком. Больше — уже не отчёт. */
 const MAX_BODY_CHARS = 5000000;
 const MAX_FIELD = 120;
@@ -55,14 +55,11 @@ function doPost(e) {
     const report = parse_(e);
     if (!report) return reply_(false, 'invalid');
 
-    const cache = CacheService.getScriptCache();
-    const minuteKey = 'rate:' + Math.floor(Date.now() / 60000);
-    const sent = Number(cache.get(minuteKey) || 0);
-    if (sent >= MAX_PER_MINUTE) return reply_(false, 'rate');
-    cache.put(minuteKey, String(sent + 1), 120);
-
-    const dupKey = 'dup:' + digest_(report.device ? 'device|' + report.device : e.postData.contents);
-    if (cache.get(dupKey)) return reply_(true, null, true);
+    const minute = Math.floor(Date.now() / 60000);
+    if (!counted_('rate:' + minute, MAX_PER_MINUTE)) return reply_(false, 'rate');
+    if (!counted_('rate:' + minute + ':' + (report.device || 'nodevice'), MAX_PER_DEVICE_PER_MINUTE)) {
+      return reply_(false, 'rate');
+    }
 
     const ev = report.evidence;
     const fileUrl = ev ? saveEvidence_(report, e.postData.contents) : '';
@@ -87,7 +84,6 @@ function doPost(e) {
     } finally {
       lock.releaseLock();
     }
-    cache.put(dupKey, '1', DUPLICATE_WINDOW_SECONDS);
     return reply_(true);
   } catch (err) {
     return reply_(false, 'error');
@@ -190,15 +186,18 @@ function sheet_() {
   return sheet;
 }
 
-function digest_(s) {
-  return Utilities.base64EncodeWebSafe(
-    Utilities.computeDigest(Utilities.DigestAlgorithm.SHA_256, s, Utilities.Charset.UTF_8));
+/** Считает обращение в счётчике [key] на эту минуту; false, если лимит уже исчерпан. */
+function counted_(key, limit) {
+  const cache = CacheService.getScriptCache();
+  const n = Number(cache.get(key) || 0);
+  if (n >= limit) return false;
+  cache.put(key, String(n + 1), 120);
+  return true;
 }
 
-function reply_(ok, error, duplicate) {
+function reply_(ok, error) {
   const body = { ok: ok };
   if (error) body.error = error;
-  if (duplicate) body.duplicate = true;
   return ContentService.createTextOutput(JSON.stringify(body))
     .setMimeType(ContentService.MimeType.JSON);
 }
