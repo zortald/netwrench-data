@@ -199,7 +199,7 @@ An entry:
 | `bands` | `{"2.4": "wifi4", "5": "wifi5"}`; a band missing from the object has no radio. No field — unknown |
 | `ports` | Port count by speed: `100m`, `1g`, `2.5g`, `5g`, `10g`, `sfp`, `sfp+`. All kinds or none |
 | `detachableAntennas` | Detachable antennas (as ToH counts them; 0 does not mean "no antennas") |
-| `externalAntennas` | External antennas, detachable or not, from the vendor page |
+| `externalAntennas` | External antennas, detachable or not: from the vendor page, or from a ToH comment that states it plainly ("4 non-detachable antennas", "internal antennas") |
 | `status`, `availableAsOf` | `discontinued` / `available` and the year ToH's note refers to |
 | `fccId` | FCC ID where known. No grant date: the FCC sites refuse automated requests, and we do not work around that |
 | `cpu`, `cpuCores`, `cpuMhz` | The SoC as ToH names it, its cores and clock |

@@ -4,32 +4,555 @@
   {
    "vendor": "MikroTik",
    "model": "E62iUGS-2axD5axT",
-   "aliases": ["hAP ax S"],
+   "aliases": [
+    "hAP ax S"
+   ],
    "type": "router",
-   "bands": {"2.4": "wifi6", "5": "wifi6"},
-   "ports": {"100m": 0, "1g": 5, "2.5g": 0, "5g": 0, "10g": 0, "sfp": 1, "sfp+": 0},
-   "cpu": "EN7562CT", "cpuCores": 2, "cpuMhz": 950, "ramMb": 512, "flashMb": 128,
-   "powerSupply": "12-28 VDC, 18-28V Passive PoE", "outdoor": false,
-   "oemUrl": "https://mikrotik.com/product/hap_ax_s", "firmwareUrl": "https://mikrotik.com/download",
-   "sources": ["https://mikrotik.com/product/hap_ax_s", "https://help.mikrotik.com/docs/spaces/UM/pages/348782676/hAP+ax+S"]
+   "bands": {
+    "2.4": "wifi6",
+    "5": "wifi6"
+   },
+   "ports": {
+    "100m": 0,
+    "1g": 5,
+    "2.5g": 0,
+    "5g": 0,
+    "10g": 0,
+    "sfp": 1,
+    "sfp+": 0
+   },
+   "cpu": "EN7562CT",
+   "cpuCores": 2,
+   "cpuMhz": 950,
+   "ramMb": 512,
+   "flashMb": 128,
+   "powerSupply": "12-28 VDC, 18-28V Passive PoE",
+   "outdoor": false,
+   "oemUrl": "https://mikrotik.com/product/hap_ax_s",
+   "firmwareUrl": "https://mikrotik.com/download",
+   "sources": [
+    "https://mikrotik.com/product/hap_ax_s",
+    "https://help.mikrotik.com/docs/spaces/UM/pages/348782676/hAP+ax+S"
+   ]
   },
   {
    "vendor": "MikroTik",
    "model": "C52iG-5HaxD2HaxD-TC",
-   "aliases": ["hAP ax²", "hAP ax2"],
+   "aliases": [
+    "hAP ax²",
+    "hAP ax2"
+   ],
    "type": "router",
-   "bands": {"2.4": "wifi6", "5": "wifi6"},
-   "ports": {"100m": 0, "1g": 5, "2.5g": 0, "5g": 0, "10g": 0, "sfp": 0, "sfp+": 0},
-   "sources": ["https://mikrotik.com/product/hap_ax2"]
+   "bands": {
+    "2.4": "wifi6",
+    "5": "wifi6"
+   },
+   "ports": {
+    "100m": 0,
+    "1g": 5,
+    "2.5g": 0,
+    "5g": 0,
+    "10g": 0,
+    "sfp": 0,
+    "sfp+": 0
+   },
+   "sources": [
+    "https://mikrotik.com/product/hap_ax2"
+   ]
   },
   {
    "vendor": "netis",
    "model": "WF2419E",
    "type": "router",
-   "bands": {"2.4": "wifi4"},
-   "ports": {"100m": 5, "1g": 0, "2.5g": 0, "5g": 0, "10g": 0, "sfp": 0, "sfp+": 0},
+   "bands": {
+    "2.4": "wifi4"
+   },
+   "ports": {
+    "100m": 5,
+    "1g": 0,
+    "2.5g": 0,
+    "5g": 0,
+    "10g": 0,
+    "sfp": 0,
+    "sfp+": 0
+   },
    "externalAntennas": 2,
-   "sources": ["https://www.netis-systems.com/products/WF2419E.html"]
+   "sources": [
+    "https://www.netis-systems.com/products/WF2419E.html"
+   ]
+  },
+  {
+   "vendor": "TP-Link",
+   "model": "Archer C6",
+   "externalAntennas": 4,
+   "sources": [
+    "https://www.tp-link.com/en/home-networking/wifi-router/archer-c6/#specifications"
+   ]
+  },
+  {
+   "vendor": "TP-Link",
+   "model": "Archer A6",
+   "externalAntennas": 4,
+   "sources": [
+    "https://www.tp-link.com/en/home-networking/wifi-router/archer-a6/#specifications"
+   ]
+  },
+  {
+   "vendor": "TP-Link",
+   "model": "Archer AX23",
+   "externalAntennas": 4,
+   "sources": [
+    "https://www.tp-link.com/en/home-networking/wifi-router/archer-ax23/#specifications"
+   ]
+  },
+  {
+   "vendor": "TP-Link",
+   "model": "Archer C50",
+   "revisions": [
+    "v6"
+   ],
+   "externalAntennas": 4,
+   "sources": [
+    "https://www.tp-link.com/en/home-networking/wifi-router/archer-c50/#specifications"
+   ]
+  },
+  {
+   "vendor": "TP-Link",
+   "model": "Archer C7",
+   "revisions": [
+    "v5"
+   ],
+   "externalAntennas": 3,
+   "sources": [
+    "https://www.tp-link.com/en/home-networking/wifi-router/archer-c7/#specifications"
+   ]
+  },
+  {
+   "vendor": "TP-Link",
+   "model": "TL-WR841N",
+   "revisions": [
+    "v13"
+   ],
+   "externalAntennas": 2,
+   "sources": [
+    "https://www.tp-link.com/en/home-networking/wifi-router/tl-wr841n/#specifications"
+   ]
+  },
+  {
+   "vendor": "TP-Link",
+   "model": "TL-WR841N",
+   "revisions": [
+    "v14"
+   ],
+   "externalAntennas": 2,
+   "sources": [
+    "https://www.tp-link.com/en/home-networking/wifi-router/tl-wr841n/#specifications"
+   ]
+  },
+  {
+   "vendor": "TP-Link",
+   "model": "TL-WR840N",
+   "externalAntennas": 2,
+   "sources": [
+    "https://www.tp-link.com/en/home-networking/wifi-router/tl-wr840n/#specifications"
+   ]
+  },
+  {
+   "vendor": "TP-Link",
+   "model": "TL-WR940N",
+   "externalAntennas": 3,
+   "sources": [
+    "https://www.tp-link.com/en/home-networking/wifi-router/tl-wr940n/#specifications"
+   ]
+  },
+  {
+   "vendor": "TP-Link",
+   "model": "RE200",
+   "externalAntennas": 0,
+   "sources": [
+    "https://www.tp-link.com/en/home-networking/range-extender/re200/#specifications"
+   ]
+  },
+  {
+   "vendor": "TP-Link",
+   "model": "RE305",
+   "externalAntennas": 2,
+   "sources": [
+    "https://www.tp-link.com/en/home-networking/range-extender/re305/#specifications"
+   ]
+  },
+  {
+   "vendor": "Xiaomi",
+   "model": "Mi Router 4A",
+   "externalAntennas": 4,
+   "sources": [
+    "https://www.mi.com/global/mi-router-4a/specs/"
+   ]
+  },
+  {
+   "vendor": "Xiaomi",
+   "model": "Mi Router 4C",
+   "externalAntennas": 4,
+   "sources": [
+    "https://www.mi.com/global/mi-router-4c/specs/"
+   ]
+  },
+  {
+   "vendor": "ASUS",
+   "model": "RT-AX53U",
+   "externalAntennas": 4,
+   "sources": [
+    "https://www.asus.com/networking-iot-servers/wifi-routers/asus-wifi-routers/rt-ax53u/techspec/"
+   ]
+  },
+  {
+   "vendor": "ASUS",
+   "model": "RT-AC51U",
+   "externalAntennas": 2,
+   "sources": [
+    "https://www.asus.com/de/Networking-IoT-Servers/WiFi-Routers/ASUS-WiFi-Routers/RTAC51U/techspec/"
+   ]
+  },
+  {
+   "vendor": "Netgear",
+   "model": "R7800",
+   "externalAntennas": 4,
+   "sources": [
+    "https://www.downloads.netgear.com/files/GDC/datasheet/en/R7800.pdf"
+   ]
+  },
+  {
+   "vendor": "D-Link",
+   "model": "DIR-842",
+   "externalAntennas": 4,
+   "sources": [
+    "https://eu.dlink.com/uk/en/products/dir-842-wireless-ac1200-dual-band-gigabit-router"
+   ]
+  },
+  {
+   "vendor": "MikroTik",
+   "model": "RB951Ui-2HnD",
+   "externalAntennas": 0,
+   "sources": [
+    "https://mikrotik.com/product/RB951Ui-2HnD"
+   ]
+  },
+  {
+   "vendor": "MikroTik",
+   "model": "RB951G-2HnD",
+   "externalAntennas": 0,
+   "sources": [
+    "https://mikrotik.com/product/RB951G-2HnD"
+   ]
+  },
+  {
+   "vendor": "MikroTik",
+   "model": "RB941-2nD",
+   "externalAntennas": 0,
+   "sources": [
+    "https://help.mikrotik.com/docs/display/UM/hAP+lite"
+   ]
+  },
+  {
+   "vendor": "MikroTik",
+   "model": "RB952Ui-5ac2nD",
+   "externalAntennas": 0,
+   "sources": [
+    "https://help.mikrotik.com/docs/display/UM/hAP+ac+lite"
+   ]
+  },
+  {
+   "vendor": "MikroTik",
+   "model": "RB962UiGS-5HacT2HnT",
+   "externalAntennas": 0,
+   "sources": [
+    "https://help.mikrotik.com/docs/display/UM/hAP+ac"
+   ]
+  },
+  {
+   "vendor": "MikroTik",
+   "model": "RB2011UiAS-2HnD",
+   "externalAntennas": 0,
+   "sources": [
+    "https://cdn.mikrotik.com/web-assets/product_files/RB2011UAS_2HnD_130503.pdf"
+   ]
+  },
+  {
+   "vendor": "TP-Link",
+   "model": "Archer C80",
+   "type": "router",
+   "bands": {
+    "2.4": "wifi4",
+    "5": "wifi5"
+   },
+   "ports": {
+    "100m": 0,
+    "1g": 5,
+    "2.5g": 0,
+    "5g": 0,
+    "10g": 0,
+    "sfp": 0,
+    "sfp+": 0
+   },
+   "externalAntennas": 4,
+   "sources": [
+    "https://www.tp-link.com/en/home-networking/wifi-router/archer-c80/#specifications"
+   ]
+  },
+  {
+   "vendor": "TP-Link",
+   "model": "Archer C64",
+   "type": "router",
+   "bands": {
+    "2.4": "wifi4",
+    "5": "wifi5"
+   },
+   "ports": {
+    "100m": 0,
+    "1g": 5,
+    "2.5g": 0,
+    "5g": 0,
+    "10g": 0,
+    "sfp": 0,
+    "sfp+": 0
+   },
+   "externalAntennas": 4,
+   "sources": [
+    "https://www.tp-link.com/en/home-networking/wifi-router/archer-c64/#specifications"
+   ]
+  },
+  {
+   "vendor": "TP-Link",
+   "model": "Archer C54",
+   "type": "router",
+   "bands": {
+    "2.4": "wifi4",
+    "5": "wifi5"
+   },
+   "ports": {
+    "100m": 5,
+    "1g": 0,
+    "2.5g": 0,
+    "5g": 0,
+    "10g": 0,
+    "sfp": 0,
+    "sfp+": 0
+   },
+   "externalAntennas": 4,
+   "sources": [
+    "https://www.tp-link.com/en/home-networking/wifi-router/archer-c54/#specifications"
+   ]
+  },
+  {
+   "vendor": "TP-Link",
+   "model": "Archer AX10",
+   "type": "router",
+   "ports": {
+    "100m": 0,
+    "1g": 5,
+    "2.5g": 0,
+    "5g": 0,
+    "10g": 0,
+    "sfp": 0,
+    "sfp+": 0
+   },
+   "externalAntennas": 4,
+   "sources": [
+    "https://www.tp-link.com/en/home-networking/wifi-router/archer-ax10/#specifications"
+   ]
+  },
+  {
+   "vendor": "TP-Link",
+   "model": "Archer AX55",
+   "type": "router",
+   "bands": {
+    "2.4": "wifi6",
+    "5": "wifi6"
+   },
+   "ports": {
+    "100m": 0,
+    "1g": 5,
+    "2.5g": 0,
+    "5g": 0,
+    "10g": 0,
+    "sfp": 0,
+    "sfp+": 0
+   },
+   "externalAntennas": 4,
+   "sources": [
+    "https://www.tp-link.com/en/home-networking/wifi-router/archer-ax55/#specifications"
+   ]
+  },
+  {
+   "vendor": "TP-Link",
+   "model": "TL-WR844N",
+   "type": "router",
+   "bands": {
+    "2.4": "wifi4"
+   },
+   "ports": {
+    "100m": 5,
+    "1g": 0,
+    "2.5g": 0,
+    "5g": 0,
+    "10g": 0,
+    "sfp": 0,
+    "sfp+": 0
+   },
+   "externalAntennas": 2,
+   "sources": [
+    "https://www.tp-link.com/en/home-networking/wifi-router/tl-wr844n/#specifications"
+   ]
+  },
+  {
+   "vendor": "Tenda",
+   "model": "N301",
+   "type": "router",
+   "bands": {
+    "2.4": "wifi4"
+   },
+   "ports": {
+    "100m": 4,
+    "1g": 0,
+    "2.5g": 0,
+    "5g": 0,
+    "10g": 0,
+    "sfp": 0,
+    "sfp+": 0
+   },
+   "externalAntennas": 2,
+   "sources": [
+    "https://static.tenda.com.cn/tdeweb/download/N301/N301%20Datasheet.pdf"
+   ]
+  },
+  {
+   "vendor": "Tenda",
+   "model": "F3",
+   "type": "router",
+   "bands": {
+    "2.4": "wifi4"
+   },
+   "ports": {
+    "100m": 4,
+    "1g": 0,
+    "2.5g": 0,
+    "5g": 0,
+    "10g": 0,
+    "sfp": 0,
+    "sfp+": 0
+   },
+   "externalAntennas": 3,
+   "sources": [
+    "https://static.tenda.com.cn/tdeweb/download/F3/F3%20Datasheet.pdf"
+   ]
+  },
+  {
+   "vendor": "Tenda",
+   "model": "AC6",
+   "type": "router",
+   "bands": {
+    "2.4": "wifi4",
+    "5": "wifi5"
+   },
+   "ports": {
+    "100m": 4,
+    "1g": 0,
+    "2.5g": 0,
+    "5g": 0,
+    "10g": 0,
+    "sfp": 0,
+    "sfp+": 0
+   },
+   "externalAntennas": 4,
+   "sources": [
+    "https://static.tenda.com.cn/tdeweb/download/AC6/AC6V5.0%20Datasheet%20(for%20Israel).pdf"
+   ]
+  },
+  {
+   "vendor": "Tenda",
+   "model": "AC10",
+   "type": "router",
+   "bands": {
+    "2.4": "wifi4",
+    "5": "wifi5"
+   },
+   "ports": {
+    "100m": 0,
+    "1g": 4,
+    "2.5g": 0,
+    "5g": 0,
+    "10g": 0,
+    "sfp": 0,
+    "sfp+": 0
+   },
+   "externalAntennas": 4,
+   "sources": [
+    "https://static.tenda.com.cn/tdeweb/download/AC10/AC10%20Datasheet.pdf"
+   ]
+  },
+  {
+   "vendor": "Mercusys",
+   "model": "MW302R",
+   "type": "router",
+   "bands": {
+    "2.4": "wifi4"
+   },
+   "ports": {
+    "100m": 3,
+    "1g": 0,
+    "2.5g": 0,
+    "5g": 0,
+    "10g": 0,
+    "sfp": 0,
+    "sfp+": 0
+   },
+   "externalAntennas": 2,
+   "sources": [
+    "https://www.mercusys.com/en/product/details/mw302r"
+   ]
+  },
+  {
+   "vendor": "Mercusys",
+   "model": "MW325R",
+   "type": "router",
+   "bands": {
+    "2.4": "wifi4"
+   },
+   "ports": {
+    "100m": 4,
+    "1g": 0,
+    "2.5g": 0,
+    "5g": 0,
+    "10g": 0,
+    "sfp": 0,
+    "sfp+": 0
+   },
+   "externalAntennas": 4,
+   "sources": [
+    "https://www.mercusys.com/en/product/details/mw325r"
+   ]
+  },
+  {
+   "vendor": "Mercusys",
+   "model": "MR30G",
+   "type": "router",
+   "bands": {
+    "2.4": "wifi4",
+    "5": "wifi5"
+   },
+   "ports": {
+    "100m": 0,
+    "1g": 3,
+    "2.5g": 0,
+    "5g": 0,
+    "10g": 0,
+    "sfp": 0,
+    "sfp+": 0
+   },
+   "externalAntennas": 4,
+   "sources": [
+    "https://www.mercusys.com/en/product/details/mr30g"
+   ]
   }
  ]
 }

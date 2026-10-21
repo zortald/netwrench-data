@@ -70,7 +70,7 @@ TOH_COLUMNS = [
     "deviceid", "brand", "model", "version", "devicetype", "availability",
     "wlan24ghz", "wlan50ghz", "detachableantennas", "fccid", *PORT_FIELDS.values(),
     # Характеристики для Pro-карточки.
-    "cpu", "cpucores", "cpumhz", "rammb", "flashmb", "wlancomments",
+    "cpu", "cpucores", "cpumhz", "rammb", "flashmb", "wlancomments", "comments",
     "supportedsincerel", "supportedcurrentrel", "powersupply",
     "oemdevicehomepageurl", "firmwareoemstockurl", "outdoor", "modem", "usbports", "vlan",
 ]
@@ -178,6 +178,34 @@ def usb(raw):
     return ", ".join(ports) if ports else ("none" if raw == ["-"] else None)
 
 
+FIXED_ANTENNAS = re.compile(
+    r"\b(\d+)\s*(?:x\s*)?(?:fixed(?:\s+external)?|non[- ]?deta?t?c?h?able)\b[^.;]{0,20}?antenna", re.I)
+INTERNAL_ANTENNAS = re.compile(r"\b(?:internal|pcb|integrated|built[- ]in)\b[^.;]{0,15}?antenna", re.I)
+NOT_WIFI = re.compile(r"\b(?:lte|4g|5g nr|gps|gnss)\b", re.I)
+
+
+def external_antennas(detachable, *notes):
+    """Сколько антенн снаружи корпуса, когда комментарий ToH говорит об этом прямо.
+
+    ToH считает только съёмные антенны, и её 0 значит «съёмных нет», а не «антенн
+    нет»: у Archer C6 их четыре несъёмных. Комментарий иногда договаривает:
+    «4 non-detachable antennas» — это 4 плюс съёмные; «internal antennas» при
+    нуле съёмных — снаружи ни одной. Всё, где речь об LTE/GPS-антеннах или где
+    сказано и про внутренние, и про внешние, остаётся неизвестным.
+    """
+    text_ = " ".join(n for n in notes if n)
+    if not text_ or NOT_WIFI.search(text_):
+        return None
+    fixed = {int(n) for n in FIXED_ANTENNAS.findall(text_)}
+    internal = INTERNAL_ANTENNAS.search(text_) is not None
+    if len(fixed) == 1 and not internal:
+        return fixed.pop() + (detachable or 0)
+    # Разъём под антенну — значит, наружу её могут вывести: снаружи неизвестно сколько.
+    if internal and not fixed and not re.search(r"external|connector", text_, re.I) and not detachable:
+        return 0
+    return None
+
+
 def split_model(raw):
     """'RBD53iG-5HacD2HnD (hap ac³)' → модель и псевдонимы; 'TL-WR841N/ND' → ещё TL-WR841ND."""
     raw = raw.strip()
@@ -238,6 +266,8 @@ def toh_entry(row):
         # Порты известны, только если источник назвал каждый вид; иначе сумма соврёт.
         "ports": known_ports if len(known_ports) == len(ports) else None,
         "detachableAntennas": count(row.get("detachableantennas")),
+        "externalAntennas": external_antennas(
+            count(row.get("detachableantennas")), text(row.get("wlancomments")), text(row.get("comments"))),
         "status": status,
         "availableAsOf": int(as_of.group(1)) if as_of else None,
         "fccId": fcc,
@@ -306,6 +336,16 @@ def build():
         for patch in doc["devices"]:
             patch = dict(patch, vendor=vendor_name(patch["vendor"]), revisions=patch.get("revisions", []))
             k = key(patch)
+            # Без ревизий запись говорит о модели целиком: ToH разносит ревизии по
+            # отдельным записям, и факт, положенный рядом одной лишней записью,
+            # не сойдётся с ними — сопоставление берёт поле, только если все
+            # ревизии согласны.
+            if k not in entries and not patch["revisions"]:
+                same = [ek for ek in entries if ek[:2] == k[:2]]
+                if same:
+                    for ek in same:
+                        entries[ek] = overlay(entries[ek], patch, source)
+                    continue
             base = entries.get(k) or {
                 "id": f"{source}:{patch['vendor'].lower()}:{patch['model'].lower()}".replace(" ", "-"),
                 "vendor": patch["vendor"], "model": patch["model"], "aliases": [],
