@@ -58,7 +58,16 @@
    },
    "sources": [
     "https://mikrotik.com/product/hap_ax2"
-   ]
+   ],
+   "cpu": "IPQ-6010",
+   "cpuCores": 4,
+   "cpuMhz": 864,
+   "ramMb": 1024,
+   "flashMb": 128,
+   "powerSupply": "12-28 V DC jack; passive PoE in 18-28 V",
+   "usb": "none",
+   "oemUrl": "https://mikrotik.com/product/hap_ax2",
+   "firmwareUrl": "https://mikrotik.com/download"
   },
   {
    "vendor": "netis",
@@ -79,7 +88,14 @@
    "externalAntennas": 2,
    "sources": [
     "https://www.netis-systems.com/products/WF2419E.html"
-   ]
+   ],
+   "cpuMhz": 1000,
+   "ramMb": 64,
+   "flashMb": 8,
+   "powerSupply": "12 V DC / 0.5 A",
+   "usb": "none",
+   "oemUrl": "https://www.netis-systems.com/products/WF2419E.html",
+   "firmwareUrl": "https://www.netis-systems.com/support/downinfo.html?id=64"
   },
   {
    "vendor": "TP-Link",
@@ -296,8 +312,14 @@
    },
    "externalAntennas": 4,
    "sources": [
-    "https://www.tp-link.com/en/home-networking/wifi-router/archer-c80/#specifications"
-   ]
+    "https://www.tp-link.com/en/home-networking/wifi-router/archer-c80/#specifications",
+    "https://www.tp-link.com/en/home-networking/wifi-router/archer-c80/"
+   ],
+   "cpuMhz": 1200,
+   "powerSupply": "12 V / 1 A (EU), 12 V / 1.5 A (US)",
+   "usb": "none",
+   "oemUrl": "https://www.tp-link.com/en/home-networking/wifi-router/archer-c80/",
+   "firmwareUrl": "https://www.tp-link.com/en/support/download/archer-c80/"
   },
   {
    "vendor": "TP-Link",
@@ -318,8 +340,13 @@
    },
    "externalAntennas": 4,
    "sources": [
-    "https://www.tp-link.com/en/home-networking/wifi-router/archer-c64/#specifications"
-   ]
+    "https://www.tp-link.com/en/home-networking/wifi-router/archer-c64/#specifications",
+    "https://www.tp-link.com/en/home-networking/wifi-router/archer-c64/"
+   ],
+   "powerSupply": "12 V / 1 A",
+   "usb": "none",
+   "oemUrl": "https://www.tp-link.com/en/home-networking/wifi-router/archer-c64/",
+   "firmwareUrl": "https://www.tp-link.com/en/support/download/archer-c64/"
   },
   {
    "vendor": "TP-Link",
@@ -340,8 +367,14 @@
    },
    "externalAntennas": 4,
    "sources": [
-    "https://www.tp-link.com/en/home-networking/wifi-router/archer-c54/#specifications"
-   ]
+    "https://www.tp-link.com/en/home-networking/wifi-router/archer-c54/#specifications",
+    "https://www.tp-link.com/en/home-networking/wifi-router/archer-c54/"
+   ],
+   "cpuCores": 1,
+   "powerSupply": "9 V / 0.85 A",
+   "usb": "none",
+   "oemUrl": "https://www.tp-link.com/en/home-networking/wifi-router/archer-c54/",
+   "firmwareUrl": "https://www.tp-link.com/en/support/download/archer-c54/"
   },
   {
    "vendor": "TP-Link",
@@ -358,8 +391,13 @@
    },
    "externalAntennas": 4,
    "sources": [
-    "https://www.tp-link.com/en/home-networking/wifi-router/archer-ax10/#specifications"
-   ]
+    "https://www.tp-link.com/en/home-networking/wifi-router/archer-ax10/#specifications",
+    "https://www.tp-link.com/en/home-networking/wifi-router/archer-ax10/"
+   ],
+   "powerSupply": "12 V / 1 A",
+   "usb": "none",
+   "oemUrl": "https://www.tp-link.com/en/home-networking/wifi-router/archer-ax10/",
+   "firmwareUrl": "https://www.tp-link.com/en/support/download/archer-ax10/"
   },
   {
    "vendor": "TP-Link",
@@ -380,8 +418,14 @@
    },
    "externalAntennas": 4,
    "sources": [
-    "https://www.tp-link.com/en/home-networking/wifi-router/archer-ax55/#specifications"
-   ]
+    "https://www.tp-link.com/en/home-networking/wifi-router/archer-ax55/#specifications",
+    "https://www.tp-link.com/en/home-networking/wifi-router/archer-ax55/"
+   ],
+   "ramMb": 512,
+   "powerSupply": "12 V / 1.5 A",
+   "usb": "1x 3.0",
+   "oemUrl": "https://www.tp-link.com/en/home-networking/wifi-router/archer-ax55/",
+   "firmwareUrl": "https://www.tp-link.com/en/support/download/archer-ax55/"
   },
   {
    "vendor": "TP-Link",
@@ -401,8 +445,14 @@
    },
    "externalAntennas": 2,
    "sources": [
-    "https://www.tp-link.com/en/home-networking/wifi-router/tl-wr844n/#specifications"
-   ]
+    "https://www.tp-link.com/en/home-networking/wifi-router/tl-wr844n/#specifications",
+    "https://www.tp-link.com/en/home-networking/wifi-router/tl-wr844n/"
+   ],
+   "cpuCores": 1,
+   "powerSupply": "5 V / 0.6 A",
+   "usb": "none",
+   "oemUrl": "https://www.tp-link.com/en/home-networking/wifi-router/tl-wr844n/",
+   "firmwareUrl": "https://www.tp-link.com/en/support/download/tl-wr844n/"
   },
   {
    "vendor": "Tenda",
@@ -422,8 +472,12 @@
    },
    "externalAntennas": 2,
    "sources": [
-    "https://static.tenda.com.cn/tdeweb/download/N301/N301%20Datasheet.pdf"
-   ]
+    "https://static.tenda.com.cn/tdeweb/download/N301/N301%20Datasheet.pdf",
+    "https://www.tendacn.com/product/support/N301"
+   ],
+   "usb": "none",
+   "oemUrl": "https://www.tendacn.com/product/N301",
+   "firmwareUrl": "https://www.tendacn.com/product/support/N301"
   },
   {
    "vendor": "Tenda",
@@ -444,7 +498,11 @@
    "externalAntennas": 3,
    "sources": [
     "https://static.tenda.com.cn/tdeweb/download/F3/F3%20Datasheet.pdf"
-   ]
+   ],
+   "powerSupply": "9 V DC / 0.6 A",
+   "usb": "none",
+   "oemUrl": "https://www.tendacn.com/product/F3",
+   "firmwareUrl": "https://www.tendacn.com/product/support/F3"
   },
   {
    "vendor": "Tenda",
@@ -466,7 +524,11 @@
    "externalAntennas": 4,
    "sources": [
     "https://static.tenda.com.cn/tdeweb/download/AC6/AC6V5.0%20Datasheet%20(for%20Israel).pdf"
-   ]
+   ],
+   "powerSupply": "9 V DC / 1 A",
+   "usb": "none",
+   "oemUrl": "https://www.tendacn.com/product/AC6",
+   "firmwareUrl": "https://www.tendacn.com/product/support/AC6"
   },
   {
    "vendor": "Tenda",
@@ -488,7 +550,11 @@
    "externalAntennas": 4,
    "sources": [
     "https://static.tenda.com.cn/tdeweb/download/AC10/AC10%20Datasheet.pdf"
-   ]
+   ],
+   "cpuMhz": 1000,
+   "powerSupply": "12 V DC / 1.5 A",
+   "usb": "none",
+   "oemUrl": "https://www.tendacn.com/product/AC10"
   },
   {
    "vendor": "Mercusys",
@@ -509,7 +575,11 @@
    "externalAntennas": 2,
    "sources": [
     "https://www.mercusys.com/en/product/details/mw302r"
-   ]
+   ],
+   "powerSupply": "5 V / 0.6 A (EU), 9 V / 0.6 A (ME)",
+   "usb": "none",
+   "oemUrl": "https://www.mercusys.com/en/product/details/mw302r",
+   "firmwareUrl": "https://www.mercusys.com/en/download/mw302r"
   },
   {
    "vendor": "Mercusys",
@@ -530,7 +600,11 @@
    "externalAntennas": 4,
    "sources": [
     "https://www.mercusys.com/en/product/details/mw325r"
-   ]
+   ],
+   "powerSupply": "5 V DC / 0.6 A",
+   "usb": "none",
+   "oemUrl": "https://www.mercusys.com/en/product/details/mw325r",
+   "firmwareUrl": "https://www.mercusys.com/en/download/mw325r"
   },
   {
    "vendor": "Mercusys",
@@ -552,6 +626,2254 @@
    "externalAntennas": 4,
    "sources": [
     "https://www.mercusys.com/en/product/details/mr30g"
+   ],
+   "powerSupply": "9 V / 0.85 A",
+   "usb": "none",
+   "oemUrl": "https://www.mercusys.com/en/product/details/mr30g",
+   "firmwareUrl": "https://www.mercusys.com/en/download/mr30g"
+  },
+  {
+   "vendor": "ASUS",
+   "model": "AX55",
+   "revisions": [
+    "v1"
+   ],
+   "externalAntennas": 4,
+   "sources": [
+    "https://www.asus.com/networking-iot-servers/wifi-routers/all-series/rt-ax55/techspec/"
+   ]
+  },
+  {
+   "vendor": "ASUS",
+   "model": "RP-AC66",
+   "externalAntennas": 2,
+   "sources": [
+    "https://www.asus.com/Networking/RP-AC66/specifications/"
+   ]
+  },
+  {
+   "vendor": "ASUS",
+   "model": "RT-AC1200",
+   "revisions": [
+    "v2"
+   ],
+   "externalAntennas": 4,
+   "sources": [
+    "https://www.asus.com/Networking-IoT-Servers/WiFi-Routers/ASUS-WiFi-Routers/RT-AC1200-V2/techspec/"
+   ]
+  },
+  {
+   "vendor": "ASUS",
+   "model": "RT-AC1200GU",
+   "externalAntennas": 4,
+   "sources": [
+    "https://www.asus.com/networking-iot-servers/wifi-routers/asus-wifi-routers/rt-ac1200gu/techspec/"
+   ]
+  },
+  {
+   "vendor": "ASUS",
+   "model": "RT-AX3000S",
+   "externalAntennas": 4,
+   "sources": [
+    "https://www.asus.com/networking-iot-servers/wifi-routers/asus-wifi-routers/rt-ax3000s/techspec/"
+   ]
+  },
+  {
+   "vendor": "ASUS",
+   "model": "RT-AX52",
+   "externalAntennas": 4,
+   "sources": [
+    "https://www.asus.com/networking-iot-servers/wifi-routers/asus-wifi-routers/rt-ax52/techspec/"
+   ]
+  },
+  {
+   "vendor": "ASUS",
+   "model": "RT-AX52 Pro",
+   "externalAntennas": 4,
+   "sources": [
+    "https://www.asus.com/networking-iot-servers/wifi-routers/asus-wifi-routers/rt-ax52-pro/techspec/"
+   ]
+  },
+  {
+   "vendor": "ASUS",
+   "model": "RT-AX57M",
+   "externalAntennas": 4,
+   "sources": [
+    "https://www.asus.com/networking-iot-servers/wifi-routers/asus-wifi-routers/rt-ax57m/techspec/"
+   ]
+  },
+  {
+   "vendor": "ASUS",
+   "model": "RT-AX89X",
+   "revisions": [
+    "B1",
+    "B2"
+   ],
+   "externalAntennas": 8,
+   "sources": [
+    "https://www.asus.com/networking-iot-servers/wifi-routers/asus-gaming-routers/rt-ax89x/techspec/"
+   ]
+  },
+  {
+   "vendor": "ASUS",
+   "model": "ZenWiFi BT8",
+   "revisions": [
+    "A1",
+    "B1",
+    "A2"
+   ],
+   "externalAntennas": 0,
+   "sources": [
+    "https://www.asus.com/us/networking-iot-servers/whole-home-mesh-wifi-system/zenwifi-wifi-systems/asus-zenwifi-bt8/techspec/"
+   ]
+  },
+  {
+   "vendor": "Cudy",
+   "model": "AP 3000 Wall",
+   "revisions": [
+    "v1"
+   ],
+   "externalAntennas": 0,
+   "sources": [
+    "https://www.cudy.com/products/ap3000-wall-1-0"
+   ]
+  },
+  {
+   "vendor": "Cudy",
+   "model": "AP3000",
+   "revisions": [
+    "v1"
+   ],
+   "externalAntennas": 0,
+   "sources": [
+    "https://www.cudy.com/products/ap3000-1-0"
+   ]
+  },
+  {
+   "vendor": "Cudy",
+   "model": "C200P",
+   "externalAntennas": 0,
+   "sources": [
+    "https://www.cudy.com/en-us/products/c200p-1-0"
+   ]
+  },
+  {
+   "vendor": "Cudy",
+   "model": "LT300",
+   "revisions": [
+    "v3"
+   ],
+   "externalAntennas": 2,
+   "sources": [
+    "https://www.cudy.com/en-nordic/products/lt300-3-0"
+   ]
+  },
+  {
+   "vendor": "Cudy",
+   "model": "LT400E",
+   "revisions": [
+    "v1"
+   ],
+   "externalAntennas": 0,
+   "sources": [
+    "https://www.cudy.com/en-us/products/lt400e-1-0"
+   ]
+  },
+  {
+   "vendor": "Cudy",
+   "model": "M1200",
+   "revisions": [
+    "v1"
+   ],
+   "externalAntennas": 0,
+   "sources": [
+    "https://www.cudy.com/products/m1200-1-0"
+   ]
+  },
+  {
+   "vendor": "Cudy",
+   "model": "M1300",
+   "revisions": [
+    "v2"
+   ],
+   "externalAntennas": 0,
+   "sources": [
+    "https://www.cudy.com/products/m1300-2-0"
+   ]
+  },
+  {
+   "vendor": "Cudy",
+   "model": "M1800",
+   "revisions": [
+    "v2"
+   ],
+   "externalAntennas": 0,
+   "sources": [
+    "https://www.cudy.com/products/m1800-2-0"
+   ]
+  },
+  {
+   "vendor": "Cudy",
+   "model": "M3000",
+   "revisions": [
+    "v1",
+    "v2"
+   ],
+   "externalAntennas": 0,
+   "sources": [
+    "https://www.cudy.com/products/m3000-1-0"
+   ]
+  },
+  {
+   "vendor": "Cudy",
+   "model": "R700",
+   "revisions": [
+    "v1"
+   ],
+   "externalAntennas": 0,
+   "sources": [
+    "https://www.cudy.com/products/r700-1-0"
+   ]
+  },
+  {
+   "vendor": "Cudy",
+   "model": "TR1200",
+   "revisions": [
+    "v1"
+   ],
+   "externalAntennas": 2,
+   "sources": [
+    "https://www.cudy.com/products/tr1200-1-0"
+   ]
+  },
+  {
+   "vendor": "Cudy",
+   "model": "TR3000",
+   "revisions": [
+    "v1"
+   ],
+   "externalAntennas": 2,
+   "sources": [
+    "https://www.cudy.com/products/tr3000-1-0"
+   ]
+  },
+  {
+   "vendor": "Cudy",
+   "model": "WR1300",
+   "revisions": [
+    "v3"
+   ],
+   "externalAntennas": 4,
+   "sources": [
+    "https://www.cudy.com/products/wr1300-3-0"
+   ]
+  },
+  {
+   "vendor": "Cudy",
+   "model": "WR3000E",
+   "revisions": [
+    "v1"
+   ],
+   "externalAntennas": 4,
+   "sources": [
+    "https://www.cudy.com/products/wr3000e-1-0"
+   ]
+  },
+  {
+   "vendor": "Cudy",
+   "model": "WR3000S",
+   "revisions": [
+    "v1"
+   ],
+   "externalAntennas": 4,
+   "sources": [
+    "https://www.cudy.com/products/wr3000s-1-0"
+   ]
+  },
+  {
+   "vendor": "D-Link",
+   "model": "AQUILA PRO AI E30",
+   "revisions": [
+    "A1"
+   ],
+   "externalAntennas": 2,
+   "sources": [
+    "https://www.dlink.com/en/products/e30-ax3000-mesh-range-extender"
+   ]
+  },
+  {
+   "vendor": "D-Link",
+   "model": "AQUILA PRO AI M30",
+   "revisions": [
+    "A1"
+   ],
+   "externalAntennas": 0,
+   "sources": [
+    "https://www.dlink.com/en/-/media/consumer_products/m/m30/datasheet/m30_a1_datasheet_v103ww.pdf"
+   ]
+  },
+  {
+   "vendor": "D-Link",
+   "model": "AQUILA PRO AI M60",
+   "revisions": [
+    "A1"
+   ],
+   "externalAntennas": 0,
+   "sources": [
+    "https://www.dlink.com/de/de/products/m60-ax6000-wifi-6-smart-mesh-router"
+   ]
+  },
+  {
+   "vendor": "D-Link",
+   "model": "COVR-C1200",
+   "revisions": [
+    "A1"
+   ],
+   "externalAntennas": 0,
+   "sources": [
+    "https://support.dlink.com/resource/PRODUCTS/COVR-C1203-US/REVA/COVR-C1203_REVA_DATASHEET_v1.00_US.pdf"
+   ]
+  },
+  {
+   "vendor": "D-Link",
+   "model": "DAP-1325",
+   "revisions": [
+    "A1"
+   ],
+   "externalAntennas": 2,
+   "sources": [
+    "https://www.dlink.com/uk/en/products/dap-1325-n300-wifi-range-extender"
+   ]
+  },
+  {
+   "vendor": "D-Link",
+   "model": "DAP-2610",
+   "revisions": [
+    "A1"
+   ],
+   "externalAntennas": 0,
+   "sources": [
+    "https://www.dlink.com/uk/en/products/dap-2610-wireless-ac1300-wave-2-dualband-poe-access-point"
+   ]
+  },
+  {
+   "vendor": "D-Link",
+   "model": "DAP-2660",
+   "revisions": [
+    "A1",
+    "A2"
+   ],
+   "externalAntennas": 0,
+   "sources": [
+    "https://www.dlink.com/uk/en/products/dap-2660-wireless-ac1200-simultaneous-dual-band-poe-access-point"
+   ]
+  },
+  {
+   "vendor": "D-Link",
+   "model": "DAP-X1860",
+   "revisions": [
+    "A1"
+   ],
+   "externalAntennas": 0,
+   "sources": [
+    "https://www.dlink.com/uk/en/products/dap-x1860-ax1800-mesh-wifi-6-range-extender"
+   ]
+  },
+  {
+   "vendor": "D-Link",
+   "model": "DIR-1360",
+   "revisions": [
+    "A1"
+   ],
+   "externalAntennas": 4,
+   "sources": [
+    "https://support.dlink.com/resource/PRODUCTS/DIR-1360/REVA/DIR-1360_REVA_DATASHEET_v1.00_US.pdf"
+   ]
+  },
+  {
+   "vendor": "D-Link",
+   "model": "DIR-1960",
+   "revisions": [
+    "A1"
+   ],
+   "externalAntennas": 4,
+   "sources": [
+    "https://support.dlink.com/resource/PRODUCTS/DIR-1960/REVA/DIR-1960_REVA_DATASHEET_v1.00_US.pdf"
+   ]
+  },
+  {
+   "vendor": "D-Link",
+   "model": "DIR-2055",
+   "revisions": [
+    "A1"
+   ],
+   "externalAntennas": 4,
+   "sources": [
+    "https://support.dlink.com/resource/products/COVR-3902-US/DIR-2055/REVA/DIR-2055_A1_Datasheet_v1.01(DCAN).pdf"
+   ]
+  },
+  {
+   "vendor": "D-Link",
+   "model": "DIR-2150",
+   "revisions": [
+    "A1"
+   ],
+   "externalAntennas": 4,
+   "sources": [
+    "https://www.dlink.com/ro/ro/products/dir-2150-ac2100-mu-mimo-wi-fi-router"
+   ]
+  },
+  {
+   "vendor": "D-Link",
+   "model": "DIR-2660",
+   "revisions": [
+    "A1"
+   ],
+   "externalAntennas": 4,
+   "sources": [
+    "https://www.dlink.com/uk/en/-/media/consumer_products/dir/dir-2660/datasheet/dir_2660_datasheet_reva1_eu_en.pdf"
+   ]
+  },
+  {
+   "vendor": "D-Link",
+   "model": "DIR-3040",
+   "revisions": [
+    "A1"
+   ],
+   "externalAntennas": 6,
+   "sources": [
+    "https://www.dlink.com/us/en/in/en/-/media/consumer_products/dir/dir-3040/datasheet/dir3040_reva_datasheet_100.PDF"
+   ]
+  },
+  {
+   "vendor": "D-Link",
+   "model": "DIR-869",
+   "revisions": [
+    "A1"
+   ],
+   "externalAntennas": 4,
+   "sources": [
+    "https://eu.dlink.com/uk/en/products/dir-869-exo-ac1750-wi-fi-router"
+   ]
+  },
+  {
+   "vendor": "D-Link",
+   "model": "DSL-2750B",
+   "revisions": [
+    "B1"
+   ],
+   "externalAntennas": 2,
+   "sources": [
+    "https://www.dlink.com/uk/en/products/dsl-2750b-wireless-n-adsl2-plus-modem-router"
+   ]
+  },
+  {
+   "vendor": "GL.iNet",
+   "model": "GL-AR300M",
+   "revisions": [
+    "v1.4.0"
+   ],
+   "externalAntennas": 0,
+   "sources": [
+    "https://docs.gl-inet.com/router/en/3/specification/gl-ar300m/"
+   ]
+  },
+  {
+   "vendor": "GL.iNet",
+   "model": "GL-AR300M-Lite",
+   "revisions": [
+    "v1"
+   ],
+   "externalAntennas": 0,
+   "sources": [
+    "https://docs.gl-inet.com/router/en/3/specification/gl-ar300m/"
+   ]
+  },
+  {
+   "vendor": "GL.iNet",
+   "model": "GL-AR750S",
+   "revisions": [
+    "v1"
+   ],
+   "externalAntennas": 2,
+   "sources": [
+    "https://www.gl-inet.com/products/gl-ar750s/"
+   ]
+  },
+  {
+   "vendor": "GL.iNet",
+   "model": "GL-AX1800",
+   "externalAntennas": 4,
+   "sources": [
+    "https://www.gl-inet.com/products/gl-ax1800/"
+   ]
+  },
+  {
+   "vendor": "GL.iNet",
+   "model": "GL-AXT1800",
+   "externalAntennas": 2,
+   "sources": [
+    "https://www.gl-inet.com/products/gl-axt1800/"
+   ]
+  },
+  {
+   "vendor": "GL.iNet",
+   "model": "GL-B3000",
+   "externalAntennas": 0,
+   "sources": [
+    "https://www.gl-inet.com/products/gl-b3000/"
+   ]
+  },
+  {
+   "vendor": "GL.iNet",
+   "model": "GL-BE10000",
+   "externalAntennas": 2,
+   "sources": [
+    "https://www.gl-inet.com/products/gl-be10000/"
+   ]
+  },
+  {
+   "vendor": "GL.iNet",
+   "model": "GL-BE9300",
+   "revisions": [
+    "v1"
+   ],
+   "externalAntennas": 4,
+   "sources": [
+    "https://www.gl-inet.com/products/gl-be9300/"
+   ]
+  },
+  {
+   "vendor": "GL.iNet",
+   "model": "GL-MT2500",
+   "externalAntennas": 0,
+   "sources": [
+    "https://www.gl-inet.com/products/gl-mt2500/"
+   ]
+  },
+  {
+   "vendor": "GL.iNet",
+   "model": "GL-MT3000",
+   "externalAntennas": 2,
+   "sources": [
+    "https://www.gl-inet.com/products/gl-mt3000/"
+   ]
+  },
+  {
+   "vendor": "GL.iNet",
+   "model": "GL-MT300N",
+   "revisions": [
+    "v2"
+   ],
+   "externalAntennas": 0,
+   "sources": [
+    "https://www.gl-inet.com/products/gl-mt300n-v2/"
+   ]
+  },
+  {
+   "vendor": "GL.iNet",
+   "model": "GL-MT3600BE",
+   "externalAntennas": 2,
+   "sources": [
+    "https://www.gl-inet.com/products/gl-mt3600be/"
+   ]
+  },
+  {
+   "vendor": "GL.iNet",
+   "model": "GL-XE300",
+   "externalAntennas": 0,
+   "sources": [
+    "https://www.gl-inet.com/products/gl-xe300/"
+   ]
+  },
+  {
+   "vendor": "GL.iNet",
+   "model": "VIXMINI",
+   "externalAntennas": 0,
+   "sources": [
+    "https://www.gl-inet.com/products/vixmini/"
+   ]
+  },
+  {
+   "vendor": "Huawei",
+   "model": "AP4050DN",
+   "externalAntennas": 0,
+   "sources": [
+    "https://info.support.huawei.com/info-finder/search-center/en/enterprise/wlan/-pid-22001428"
+   ]
+  },
+  {
+   "vendor": "Keenetic",
+   "model": "KN-1012",
+   "externalAntennas": 4,
+   "sources": [
+    "https://keenetic.com/en/keenetic-hero-kn-1012"
+   ]
+  },
+  {
+   "vendor": "Keenetic",
+   "model": "KN-1112",
+   "externalAntennas": 2,
+   "sources": [
+    "https://keenetic.com/en/keenetic-starter-kn-1112"
+   ]
+  },
+  {
+   "vendor": "Keenetic",
+   "model": "KN-1212",
+   "externalAntennas": 2,
+   "sources": [
+    "https://keenetic.ru/ru/keenetic-4g-kn-1212"
+   ]
+  },
+  {
+   "vendor": "Keenetic",
+   "model": "KN-1221",
+   "externalAntennas": 2,
+   "sources": [
+    "https://keenetic.ru/ru/keenetic-launcher"
+   ]
+  },
+  {
+   "vendor": "Keenetic",
+   "model": "KN-1711",
+   "externalAntennas": 4,
+   "sources": [
+    "https://keenetic.com/en/keenetic-carrier-kn-1711"
+   ]
+  },
+  {
+   "vendor": "Keenetic",
+   "model": "KN-1713",
+   "externalAntennas": 2,
+   "sources": [
+    "https://keenetic.com/en/keenetic-carrier-kn-1713"
+   ]
+  },
+  {
+   "vendor": "Keenetic",
+   "model": "KN-3010",
+   "externalAntennas": 4,
+   "sources": [
+    "https://keenetic.com/en/keenetic-speedster-kn-3010"
+   ]
+  },
+  {
+   "vendor": "Keenetic",
+   "model": "KN-3211",
+   "externalAntennas": 2,
+   "sources": [
+    "https://keenetic.com/en/keenetic-buddy-4"
+   ]
+  },
+  {
+   "vendor": "Keenetic",
+   "model": "KN-3411",
+   "externalAntennas": 2,
+   "sources": [
+    "https://keenetic.com/en/keenetic-buddy-6"
+   ]
+  },
+  {
+   "vendor": "Keenetic",
+   "model": "KN-3510",
+   "externalAntennas": 0,
+   "sources": [
+    "https://keenetic.com/en/keenetic-voyager-pro"
+   ]
+  },
+  {
+   "vendor": "Keenetic",
+   "model": "KN-3811",
+   "externalAntennas": 5,
+   "sources": [
+    "https://keenetic.com/en/keenetic-hopper"
+   ]
+  },
+  {
+   "vendor": "Keenetic",
+   "model": "KN-3911",
+   "externalAntennas": 0,
+   "sources": [
+    "https://keenetic.com/en/keenetic-challenger-se"
+   ]
+  },
+  {
+   "vendor": "Linksys",
+   "model": "E2500",
+   "revisions": [
+    "v3"
+   ],
+   "externalAntennas": 0,
+   "sources": [
+    "https://www.linksys.com/ro/support-article?articleNum=141208"
+   ]
+  },
+  {
+   "vendor": "Linksys",
+   "model": "E2500",
+   "revisions": [
+    "v4"
+   ],
+   "externalAntennas": 2,
+   "sources": [
+    "https://www.linksys.com/fi/p/P-E2500V4/"
+   ]
+  },
+  {
+   "vendor": "Linksys",
+   "model": "E5350",
+   "externalAntennas": 2,
+   "sources": [
+    "https://www.linksys.com/tr/wifi-5-router-dual-band-ac1000/E5350-ME.html"
+   ]
+  },
+  {
+   "vendor": "Linksys",
+   "model": "E5400",
+   "externalAntennas": 2,
+   "sources": [
+    "https://support.linksys.com/kb/article/388-en/"
+   ]
+  },
+  {
+   "vendor": "Linksys",
+   "model": "E5600",
+   "revisions": [
+    "v1"
+   ],
+   "externalAntennas": 0,
+   "sources": [
+    "https://www.linksys.com/hn/e5600---dual-band-ac1200-wifi-5-router/E5600.html"
+   ]
+  },
+  {
+   "vendor": "Linksys",
+   "model": "E7350",
+   "revisions": [
+    "v1"
+   ],
+   "externalAntennas": 0,
+   "sources": [
+    "https://linksys.com/us/wireless-routers/traditional-routers/dual-band-ax1800-wifi-6-router-e7350/p/p-e7350"
+   ]
+  },
+  {
+   "vendor": "Linksys",
+   "model": "E8450",
+   "externalAntennas": 0,
+   "sources": [
+    "https://www.linksys.com/hn/dual-band-ax3200-wifi-6-router/E8450.html"
+   ]
+  },
+  {
+   "vendor": "Linksys",
+   "model": "EA6350",
+   "revisions": [
+    "v4"
+   ],
+   "externalAntennas": 2,
+   "sources": [
+    "https://www.linksys.com/ru/support-article?articleNum=316755"
+   ]
+  },
+  {
+   "vendor": "Linksys",
+   "model": "EA7200",
+   "externalAntennas": 3,
+   "sources": [
+    "https://downloads.linksys.com/support/assets/userguide/EA7200_EN%20-%20USER%20GUIDE%20_20190827.pdf"
+   ]
+  },
+  {
+   "vendor": "Linksys",
+   "model": "EA7450",
+   "externalAntennas": 3,
+   "sources": [
+    "https://www.linksys.com/dual-band-ac1900-wifi-5-router/EA7450.html"
+   ]
+  },
+  {
+   "vendor": "Linksys",
+   "model": "EA8300",
+   "revisions": [
+    "v1"
+   ],
+   "externalAntennas": 4,
+   "sources": [
+    "https://downloads.linksys.com/downloads/datasheet/PB_EA8300_AC2200_Max-Stream_EN.pdf"
+   ]
+  },
+  {
+   "vendor": "Linksys",
+   "model": "EA9500",
+   "revisions": [
+    "v1",
+    "v1.1"
+   ],
+   "externalAntennas": 8,
+   "sources": [
+    "https://downloads.linksys.com/downloads/datasheet/PR%2051829_15PB019_EA9500_AC5400_Max-Stream_PB_MEA_EN_v2.pdf"
+   ]
+  },
+  {
+   "vendor": "Linksys",
+   "model": "MR5500",
+   "externalAntennas": 2,
+   "sources": [
+    "https://support.linksys.com/kb/article/207-en/"
+   ]
+  },
+  {
+   "vendor": "Linksys",
+   "model": "MR6350",
+   "revisions": [
+    "v1"
+   ],
+   "externalAntennas": 2,
+   "sources": [
+    "https://downloads.linksys.com/support/assets/userguide/MR6350%20-%20USER%20GUIDE%20-%20INTL-RevA01.pdf"
+   ]
+  },
+  {
+   "vendor": "Linksys",
+   "model": "MR7350",
+   "revisions": [
+    "1.0"
+   ],
+   "externalAntennas": 2,
+   "sources": [
+    "https://support.linksys.com/kb/article/947-en/"
+   ]
+  },
+  {
+   "vendor": "Linksys",
+   "model": "MR7500",
+   "externalAntennas": 4,
+   "sources": [
+    "https://support.linksys.com/kb/article/953-en/"
+   ]
+  },
+  {
+   "vendor": "Linksys",
+   "model": "MR8300",
+   "revisions": [
+    "v1",
+    "v1.1"
+   ],
+   "externalAntennas": 4,
+   "sources": [
+    "https://downloads.linksys.com/downloads/userguide/MR8300_UG_INTL_Rev_A01.pdf"
+   ]
+  },
+  {
+   "vendor": "Linksys",
+   "model": "MR9000",
+   "externalAntennas": 4,
+   "sources": [
+    "https://downloads.linksys.com/support/assets/userguide/MR9000_USERGUIDE_INTL.pdf"
+   ]
+  },
+  {
+   "vendor": "Linksys",
+   "model": "MX2000",
+   "revisions": [
+    "MX2000",
+    "MX2000CF",
+    "SPNMX20CF"
+   ],
+   "externalAntennas": 0,
+   "sources": [
+    "https://downloads.linksys.com/support/assets/userguide/MX2000Series_UG_LNKPG-00913_A00_International.pdf"
+   ]
+  },
+  {
+   "vendor": "Linksys",
+   "model": "MX5300",
+   "externalAntennas": 0,
+   "sources": [
+    "https://downloads.linksys.com/support/assets/userguide/Velop_MX5300_USERGUIDE_INTL_RevA01.pdf"
+   ]
+  },
+  {
+   "vendor": "Linksys",
+   "model": "MX5500",
+   "externalAntennas": 0,
+   "sources": [
+    "https://downloads.linksys.com/support/assets/userguide/MX5500Series_UserGuide_INTL_LNKPG-00859_RevA00.pdf"
+   ]
+  },
+  {
+   "vendor": "Linksys",
+   "model": "RE7000",
+   "externalAntennas": 0,
+   "sources": [
+    "https://downloads.linksys.com/downloads/datasheet/PR%2052337_PB_16PB014_RE7000_Max-Stream_Range_Extender_SR_en.pdf"
+   ]
+  },
+  {
+   "vendor": "Linksys",
+   "model": "SPNMX56",
+   "externalAntennas": 0,
+   "sources": [
+    "https://support.linksys.com/kb/article/236"
+   ]
+  },
+  {
+   "vendor": "Linksys",
+   "model": "WHW01",
+   "revisions": [
+    "v1"
+   ],
+   "externalAntennas": 0,
+   "sources": [
+    "https://www.linksys.com/fi/p/P-WHW0101/"
+   ]
+  },
+  {
+   "vendor": "Mercusys",
+   "model": "MB130-4G",
+   "revisions": [
+    "V1"
+   ],
+   "externalAntennas": 0,
+   "sources": [
+    "https://www.mercusys.com/en/product/5g-4g-router/mb130-4g/v1/"
+   ]
+  },
+  {
+   "vendor": "Mercusys",
+   "model": "MR85X",
+   "externalAntennas": 4,
+   "sources": [
+    "https://www.mercusys.com/en/product/wifi-router/mr85x/v1/"
+   ]
+  },
+  {
+   "vendor": "MikroTik",
+   "model": "LtAP-2HnD",
+   "externalAntennas": 0,
+   "sources": [
+    "https://help.mikrotik.com/docs/pages/viewpage.action?pageId=16351307"
+   ]
+  },
+  {
+   "vendor": "MikroTik",
+   "model": "PowerBox Pro",
+   "externalAntennas": 0,
+   "sources": [
+    "https://mikrotik.com/product/RB960PGS-PB"
+   ]
+  },
+  {
+   "vendor": "MikroTik",
+   "model": "RB2011UiAS",
+   "revisions": [
+    "r1",
+    "r2",
+    "r3"
+   ],
+   "externalAntennas": 0,
+   "sources": [
+    "https://mikrotik.com/product/RB2011UiAS-IN"
+   ]
+  },
+  {
+   "vendor": "MikroTik",
+   "model": "RB2011iL",
+   "externalAntennas": 0,
+   "sources": [
+    "https://mikrotik.com/product/RB2011iL-IN"
+   ]
+  },
+  {
+   "vendor": "MikroTik",
+   "model": "RB2011iLS",
+   "externalAntennas": 0,
+   "sources": [
+    "https://mikrotik.com/product/RB2011iLS-IN"
+   ]
+  },
+  {
+   "vendor": "MikroTik",
+   "model": "RB5009UG+S+IN",
+   "externalAntennas": 0,
+   "sources": [
+    "https://mikrotik.com/product/rb5009ug_s_in"
+   ]
+  },
+  {
+   "vendor": "MikroTik",
+   "model": "RB750Gr3",
+   "externalAntennas": 0,
+   "sources": [
+    "https://mikrotik.com/product/RB750Gr3"
+   ]
+  },
+  {
+   "vendor": "MikroTik",
+   "model": "RB750P-PBr2",
+   "externalAntennas": 0,
+   "sources": [
+    "https://mikrotik.com/product/RB750P-PBr2"
+   ]
+  },
+  {
+   "vendor": "MikroTik",
+   "model": "RB750UPr2",
+   "externalAntennas": 0,
+   "sources": [
+    "https://mikrotik.com/product/RB750UPr2"
+   ]
+  },
+  {
+   "vendor": "MikroTik",
+   "model": "RB750r2",
+   "externalAntennas": 0,
+   "sources": [
+    "https://mikrotik.com/product/RB750r2"
+   ]
+  },
+  {
+   "vendor": "MikroTik",
+   "model": "RB760iGS",
+   "externalAntennas": 0,
+   "sources": [
+    "https://mikrotik.com/product/hex_s"
+   ]
+  },
+  {
+   "vendor": "MikroTik",
+   "model": "RB921GS-5HPacD-15S",
+   "externalAntennas": 0,
+   "sources": [
+    "https://mikrotik.com/product/RB921GS-5HPacD-15S"
+   ]
+  },
+  {
+   "vendor": "MikroTik",
+   "model": "RB941-2nD-TC",
+   "externalAntennas": 0,
+   "sources": [
+    "https://help.mikrotik.com/docs/pages/viewpage.action?pageId=16351392"
+   ]
+  },
+  {
+   "vendor": "MikroTik",
+   "model": "RB951Ui-2nD",
+   "externalAntennas": 0,
+   "sources": [
+    "https://help.mikrotik.com/docs/pages/viewpage.action?pageId=16351431"
+   ]
+  },
+  {
+   "vendor": "MikroTik",
+   "model": "RBDiscG-5acD",
+   "externalAntennas": 0,
+   "sources": [
+    "https://help.mikrotik.com/docs/pages/viewpage.action?pageId=14221585"
+   ]
+  },
+  {
+   "vendor": "MikroTik",
+   "model": "RBLHG-2nD",
+   "externalAntennas": 0,
+   "sources": [
+    "https://mikrotik.com/product/lhg_2"
+   ]
+  },
+  {
+   "vendor": "MikroTik",
+   "model": "RBLHG-5nD",
+   "externalAntennas": 0,
+   "sources": [
+    "https://mikrotik.com/product/RBLHG-5nD"
+   ]
+  },
+  {
+   "vendor": "MikroTik",
+   "model": "RBLHGG-5acD",
+   "externalAntennas": 0,
+   "sources": [
+    "https://mikrotik.com/product/lhg_5_ac"
+   ]
+  },
+  {
+   "vendor": "MikroTik",
+   "model": "RBLHGG-5acD-XL",
+   "externalAntennas": 0,
+   "sources": [
+    "https://mikrotik.com/product/lhg_xl_5_ac"
+   ]
+  },
+  {
+   "vendor": "MikroTik",
+   "model": "RBSXTsqG-5acD",
+   "externalAntennas": 0,
+   "sources": [
+    "https://mikrotik.com/product/sxtsq_5_ac"
+   ]
+  },
+  {
+   "vendor": "MikroTik",
+   "model": "RBmAP-2nD",
+   "externalAntennas": 0,
+   "sources": [
+    "https://help.mikrotik.com/docs/pages/viewpage.action?pageId=16351423"
+   ]
+  },
+  {
+   "vendor": "MikroTik",
+   "model": "hEX PoE",
+   "externalAntennas": 0,
+   "sources": [
+    "https://mikrotik.com/product/RB960PGS"
+   ]
+  },
+  {
+   "vendor": "Netgear",
+   "model": "EAX11",
+   "revisions": [
+    "v2"
+   ],
+   "externalAntennas": 0,
+   "sources": [
+    "https://www.downloads.netgear.com/files/GDC/EAX11v2/EAX11v2_NA_DS.pdf"
+   ]
+  },
+  {
+   "vendor": "Netgear",
+   "model": "EAX12",
+   "externalAntennas": 0,
+   "sources": [
+    "https://www.downloads.netgear.com/files/GDC/EAX12/EAX12_DS.pdf"
+   ]
+  },
+  {
+   "vendor": "Netgear",
+   "model": "EAX15",
+   "revisions": [
+    "v2"
+   ],
+   "externalAntennas": 0,
+   "sources": [
+    "https://www.netgear.com/home/wifi/range-extenders/eax15/"
+   ]
+  },
+  {
+   "vendor": "Netgear",
+   "model": "EAX17",
+   "externalAntennas": 0,
+   "sources": [
+    "https://www.downloads.netgear.com/files/GDC/EAX17/EAX17_TS.pdf"
+   ]
+  },
+  {
+   "vendor": "Netgear",
+   "model": "EX3800",
+   "externalAntennas": 2,
+   "sources": [
+    "https://www.netgear.com/fr/home/wifi/range-extenders/ex3800/"
+   ]
+  },
+  {
+   "vendor": "Netgear",
+   "model": "EX6130",
+   "externalAntennas": 2,
+   "sources": [
+    "https://www.netgear.com/fr/home/wifi/range-extenders/ex6130/"
+   ]
+  },
+  {
+   "vendor": "Netgear",
+   "model": "Orbi 4G LTE",
+   "externalAntennas": 0,
+   "sources": [
+    "https://www.netgear.com/mobile-wifi/routers/lbr20/"
+   ]
+  },
+  {
+   "vendor": "Netgear",
+   "model": "R7900",
+   "externalAntennas": 6,
+   "sources": [
+    "https://www.downloads.netgear.com/files/GDC/datasheet/en/R7900.pdf"
+   ]
+  },
+  {
+   "vendor": "Netgear",
+   "model": "R8000P",
+   "externalAntennas": 6,
+   "sources": [
+    "https://www.downloads.netgear.com/files/GDC/datasheet/en/R8000P.pdf"
+   ]
+  },
+  {
+   "vendor": "Netgear",
+   "model": "WAC510",
+   "externalAntennas": 0,
+   "sources": [
+    "https://www.downloads.netgear.com/files/GDC/WAX610/WAX610_WAX610Y_DS.pdf"
+   ]
+  },
+  {
+   "vendor": "Netgear",
+   "model": "WAX610",
+   "externalAntennas": 0,
+   "sources": [
+    "https://www.downloads.netgear.com/files/GDC/WAX610/WAX610_WAX610Y_DS.pdf"
+   ]
+  },
+  {
+   "vendor": "Netgear",
+   "model": "WAX610Y",
+   "externalAntennas": 0,
+   "sources": [
+    "https://www.downloads.netgear.com/files/GDC/WAX610/WAX610_WAX610Y_DS.pdf"
+   ]
+  },
+  {
+   "vendor": "Netgear",
+   "model": "WAX620",
+   "externalAntennas": 0,
+   "sources": [
+    "https://www.downloads.netgear.com/files/GDC/WAX620/WAX620_DS.pdf"
+   ]
+  },
+  {
+   "vendor": "Netgear",
+   "model": "WAX630",
+   "externalAntennas": 0,
+   "sources": [
+    "https://www.downloads.netgear.com/files/GDC/WAX630/WAX630_DS.pdf"
+   ]
+  },
+  {
+   "vendor": "TP-Link",
+   "model": "AX55 Pro",
+   "revisions": [
+    "v1"
+   ],
+   "externalAntennas": 4,
+   "sources": [
+    "https://www.tp-link.com/us/home-networking/wifi-router/archer-ax55-pro/"
+   ]
+  },
+  {
+   "vendor": "TP-Link",
+   "model": "Archer A5",
+   "revisions": [
+    "v6"
+   ],
+   "externalAntennas": 4,
+   "sources": [
+    "https://www.tp-link.com/en/home-networking/wifi-router/archer-a5/v6/"
+   ]
+  },
+  {
+   "vendor": "TP-Link",
+   "model": "Archer A7",
+   "revisions": [
+    "v5"
+   ],
+   "externalAntennas": 3,
+   "sources": [
+    "https://www.tp-link.com/us/home-networking/wifi-router/archer-a7/"
+   ]
+  },
+  {
+   "vendor": "TP-Link",
+   "model": "Archer A9",
+   "revisions": [
+    "v6"
+   ],
+   "externalAntennas": 3,
+   "sources": [
+    "https://www.tp-link.com/us/home-networking/wifi-router/archer-a9/"
+   ]
+  },
+  {
+   "vendor": "TP-Link",
+   "model": "Archer AX21",
+   "revisions": [
+    "v4"
+   ],
+   "externalAntennas": 4,
+   "sources": [
+    "https://www.tp-link.com/en/home-networking/wifi-router/archer-ax21/v4/"
+   ]
+  },
+  {
+   "vendor": "TP-Link",
+   "model": "Archer C20",
+   "revisions": [
+    "v5"
+   ],
+   "externalAntennas": 3,
+   "sources": [
+    "https://www.tp-link.com/en/home-networking/wifi-router/archer-c20/v5/"
+   ]
+  },
+  {
+   "vendor": "TP-Link",
+   "model": "Archer C20i",
+   "revisions": [
+    "v1"
+   ],
+   "externalAntennas": 0,
+   "sources": [
+    "https://www.tp-link.com/en/home-networking/wifi-router/archer-c20i/"
+   ]
+  },
+  {
+   "vendor": "TP-Link",
+   "model": "Archer C5",
+   "revisions": [
+    "v4"
+   ],
+   "externalAntennas": 4,
+   "sources": [
+    "https://www.tp-link.com/baltic/products/details/archer-c5-v4.html"
+   ]
+  },
+  {
+   "vendor": "TP-Link",
+   "model": "Archer C50",
+   "revisions": [
+    "v4"
+   ],
+   "externalAntennas": 4,
+   "sources": [
+    "https://www.tp-link.com/en/home-networking/wifi-router/archer-c50/v4/"
+   ]
+  },
+  {
+   "vendor": "TP-Link",
+   "model": "Archer C6U",
+   "revisions": [
+    "v1"
+   ],
+   "externalAntennas": 4,
+   "sources": [
+    "https://www.tp-link.com/en/home-networking/wifi-router/archer-c6u/"
+   ]
+  },
+  {
+   "vendor": "TP-Link",
+   "model": "Archer D7",
+   "revisions": [
+    "v1"
+   ],
+   "externalAntennas": 3,
+   "sources": [
+    "https://www.tp-link.com/en/home-networking/dsl-modem-router/archer-d7/"
+   ]
+  },
+  {
+   "vendor": "TP-Link",
+   "model": "Archer D7b",
+   "revisions": [
+    "v1"
+   ],
+   "externalAntennas": 3,
+   "sources": [
+    "https://www.tp-link.com/en/home-networking/dsl-modem-router/archer-d7b/"
+   ]
+  },
+  {
+   "vendor": "TP-Link",
+   "model": "BE450",
+   "revisions": [
+    "v1"
+   ],
+   "externalAntennas": 0,
+   "sources": [
+    "https://www.tp-link.com/nordic/home-networking/wifi-router/archer-be450/"
+   ]
+  },
+  {
+   "vendor": "TP-Link",
+   "model": "CPE210",
+   "revisions": [
+    "v3",
+    "v3.26"
+   ],
+   "externalAntennas": 0,
+   "sources": [
+    "https://www.tp-link.com/en/business-networking/pharos-cpe/cpe210/"
+   ]
+  },
+  {
+   "vendor": "TP-Link",
+   "model": "CPE220",
+   "revisions": [
+    "v3"
+   ],
+   "externalAntennas": 0,
+   "sources": [
+    "https://www.tp-link.com/au/business-networking/pharos-cpe/cpe220/"
+   ]
+  },
+  {
+   "vendor": "TP-Link",
+   "model": "CPE510",
+   "revisions": [
+    "v3"
+   ],
+   "externalAntennas": 0,
+   "sources": [
+    "https://www.tp-link.com/en/business-networking/pharos-cpe/cpe510/"
+   ]
+  },
+  {
+   "vendor": "TP-Link",
+   "model": "Deco X50-POE",
+   "revisions": [
+    "v2"
+   ],
+   "externalAntennas": 0,
+   "sources": [
+    "https://www.tp-link.com/en/home-networking/deco/deco-x50-poe/v2/"
+   ]
+  },
+  {
+   "vendor": "TP-Link",
+   "model": "Deco X80-5G",
+   "revisions": [
+    "v1"
+   ],
+   "externalAntennas": 0,
+   "sources": [
+    "https://www.tp-link.com/en/home-networking/deco/deco-x80-5g/"
+   ]
+  },
+  {
+   "vendor": "TP-Link",
+   "model": "EAP225",
+   "revisions": [
+    "v3"
+   ],
+   "externalAntennas": 0,
+   "sources": [
+    "https://www.omadanetworks.com/en/business-networking/omada-wifi-ceiling-mount/eap225/v3/"
+   ]
+  },
+  {
+   "vendor": "TP-Link",
+   "model": "EAP225",
+   "revisions": [
+    "v4"
+   ],
+   "externalAntennas": 0,
+   "sources": [
+    "https://www.omadanetworks.com/en/business-networking/omada-wifi-ceiling-mount/eap225/v4/"
+   ]
+  },
+  {
+   "vendor": "TP-Link",
+   "model": "EAP225",
+   "revisions": [
+    "v5"
+   ],
+   "externalAntennas": 0,
+   "sources": [
+    "https://www.omadanetworks.com/en/business-networking/omada-wifi-ceiling-mount/eap225/v5/"
+   ]
+  },
+  {
+   "vendor": "TP-Link",
+   "model": "EAP235-Wall",
+   "revisions": [
+    "v1"
+   ],
+   "externalAntennas": 0,
+   "sources": [
+    "https://static.tp-link.com/upload/product-overview/2026/202608/20260810/Datasheet_EAP235-Wall 1.20 - EG.pdf"
+   ]
+  },
+  {
+   "vendor": "TP-Link",
+   "model": "EAP245",
+   "revisions": [
+    "v3"
+   ],
+   "externalAntennas": 0,
+   "sources": [
+    "https://www.omadanetworks.com/en/business-networking/omada-wifi-ceiling-mount/eap245/v3/"
+   ]
+  },
+  {
+   "vendor": "TP-Link",
+   "model": "EAP265 HD",
+   "revisions": [
+    "v1"
+   ],
+   "externalAntennas": 0,
+   "sources": [
+    "https://www.omadanetworks.com/en/business-networking/omada-wifi-ceiling-mount/eap265-hd/"
+   ]
+  },
+  {
+   "vendor": "TP-Link",
+   "model": "EAP610",
+   "revisions": [
+    "v3"
+   ],
+   "externalAntennas": 0,
+   "sources": [
+    "https://www.omadanetworks.com/us/business-networking/omada-wifi-ceiling-mount/eap610/v3/"
+   ]
+  },
+  {
+   "vendor": "TP-Link",
+   "model": "EAP613",
+   "revisions": [
+    "v1"
+   ],
+   "externalAntennas": 0,
+   "sources": [
+    "https://www.omadanetworks.com/en/business-networking/omada-wifi-ceiling-mount/eap613/v1/"
+   ]
+  },
+  {
+   "vendor": "TP-Link",
+   "model": "EAP615-Wall",
+   "revisions": [
+    "v1"
+   ],
+   "externalAntennas": 0,
+   "sources": [
+    "https://static.tp-link.com/upload/product-overview/2026/202608/20260810/Datasheet_EAP615-Wall 1.20 - EG.pdf"
+   ]
+  },
+  {
+   "vendor": "TP-Link",
+   "model": "EAP620 HD",
+   "revisions": [
+    "V1"
+   ],
+   "externalAntennas": 0,
+   "sources": [
+    "https://www.omadanetworks.com/us/business-networking/omada-wifi-ceiling-mount/eap620-hd/v1/"
+   ]
+  },
+  {
+   "vendor": "TP-Link",
+   "model": "EAP620HD",
+   "revisions": [
+    "v3"
+   ],
+   "externalAntennas": 0,
+   "sources": [
+    "https://www.omadanetworks.com/us/business-networking/omada-wifi-ceiling-mount/eap620-hd/v3/"
+   ]
+  },
+  {
+   "vendor": "TP-Link",
+   "model": "EAP623-Outdoor HD",
+   "revisions": [
+    "v1"
+   ],
+   "externalAntennas": 0,
+   "sources": [
+    "https://www.omadanetworks.com/pk/business-networking/omada-wifi-outdoor/eap623-outdoor-hd/"
+   ]
+  },
+  {
+   "vendor": "TP-Link",
+   "model": "EAP650-Outdoor",
+   "revisions": [
+    "v1"
+   ],
+   "externalAntennas": 0,
+   "sources": [
+    "https://static.tp-link.com/upload/product-overview/2026/202606/20260615/Datasheet_EAP650-Outdoor V1.20.pdf"
+   ]
+  },
+  {
+   "vendor": "TP-Link",
+   "model": "EAP660 HD",
+   "revisions": [
+    "v1"
+   ],
+   "externalAntennas": 0,
+   "sources": [
+    "https://www.omadanetworks.com/us/business-networking/omada-wifi-ceiling-mount/eap660-hd/v1/"
+   ]
+  },
+  {
+   "vendor": "TP-Link",
+   "model": "EAP680",
+   "revisions": [
+    "v1"
+   ],
+   "externalAntennas": 0,
+   "sources": [
+    "https://www.omadanetworks.com/en/business-networking/omada-wifi-ceiling-mount/eap680/"
+   ]
+  },
+  {
+   "vendor": "TP-Link",
+   "model": "EAP683",
+   "revisions": [
+    "-LR"
+   ],
+   "externalAntennas": 0,
+   "sources": [
+    "https://www.omadanetworks.com/us/business-networking/omada-wifi-ceiling-mount/eap683-lr/v1/"
+   ]
+  },
+  {
+   "vendor": "TP-Link",
+   "model": "EAP683",
+   "revisions": [
+    "-UR"
+   ],
+   "externalAntennas": 0,
+   "sources": [
+    "https://www.omadanetworks.com/us/business-networking/omada-wifi-ceiling-mount/eap683-ur/v1/"
+   ]
+  },
+  {
+   "vendor": "TP-Link",
+   "model": "EC220-G5",
+   "revisions": [
+    "v2"
+   ],
+   "externalAntennas": 4,
+   "sources": [
+    "https://www.tp-link.com/in/service-provider/wifi-router/ec220-g5/"
+   ]
+  },
+  {
+   "vendor": "TP-Link",
+   "model": "ER605",
+   "revisions": [
+    "v2",
+    "v2.0",
+    "v2.20",
+    "v2.26",
+    "v2.28",
+    "v2.30",
+    "v2.36",
+    "v2.38",
+    "v2.6",
+    "v2.8"
+   ],
+   "externalAntennas": 0,
+   "sources": [
+    "https://www.omadanetworks.com/en/business-networking/omada-router-wired-router/er605/"
+   ]
+  },
+  {
+   "vendor": "TP-Link",
+   "model": "FR205",
+   "revisions": [
+    "v1",
+    "v1.2",
+    "v1.26",
+    "v1.60"
+   ],
+   "externalAntennas": 0,
+   "sources": [
+    "https://www.tp-link.com/en/business-networking/soho-festa-gateway/festa-fr205/"
+   ]
+  },
+  {
+   "vendor": "TP-Link",
+   "model": "RE205",
+   "revisions": [
+    "v3"
+   ],
+   "externalAntennas": 2,
+   "sources": [
+    "https://www.tp-link.com/en/home-networking/range-extender/re205/"
+   ]
+  },
+  {
+   "vendor": "TP-Link",
+   "model": "RE220",
+   "revisions": [
+    "v2"
+   ],
+   "externalAntennas": 0,
+   "sources": [
+    "https://www.tp-link.com/en/home-networking/range-extender/re220/v2/"
+   ]
+  },
+  {
+   "vendor": "TP-Link",
+   "model": "RE350K",
+   "revisions": [
+    "v1"
+   ],
+   "externalAntennas": 2,
+   "sources": [
+    "https://www.tp-link.com/us/home-networking/range-extender/re350k/"
+   ]
+  },
+  {
+   "vendor": "TP-Link",
+   "model": "RE455",
+   "revisions": [
+    "v1"
+   ],
+   "externalAntennas": 3,
+   "sources": [
+    "https://www.tp-link.com/it/home-networking/range-extender/re455/"
+   ]
+  },
+  {
+   "vendor": "TP-Link",
+   "model": "RE650",
+   "revisions": [
+    "v1"
+   ],
+   "externalAntennas": 4,
+   "sources": [
+    "https://www.tp-link.com/en/home-networking/range-extender/re650/v1/"
+   ]
+  },
+  {
+   "vendor": "TP-Link",
+   "model": "RE650",
+   "revisions": [
+    "v2"
+   ],
+   "externalAntennas": 4,
+   "sources": [
+    "https://www.tp-link.com/en/home-networking/range-extender/re650/"
+   ]
+  },
+  {
+   "vendor": "TP-Link",
+   "model": "TL-MR3420",
+   "revisions": [
+    "v5"
+   ],
+   "externalAntennas": 2,
+   "sources": [
+    "https://www.tp-link.com/en/home-networking/5g-4g-router/tl-mr3420/v5/"
+   ]
+  },
+  {
+   "vendor": "TP-Link",
+   "model": "TL-WA1201",
+   "revisions": [
+    "v2"
+   ],
+   "externalAntennas": 4,
+   "sources": [
+    "https://www.tp-link.com/kz/home-networking/access-point/tl-wa1201/v2/"
+   ]
+  },
+  {
+   "vendor": "TP-Link",
+   "model": "TL-WR1043N",
+   "revisions": [
+    "v5"
+   ],
+   "externalAntennas": 3,
+   "sources": [
+    "https://www.tp-link.com/en/home-networking/wifi-router/tl-wr1043n/"
+   ]
+  },
+  {
+   "vendor": "TP-Link",
+   "model": "TL-WR740N",
+   "revisions": [
+    "v5"
+   ],
+   "externalAntennas": 1,
+   "sources": [
+    "https://www.tp-link.com/uk-ua/home-networking/wifi-router/tl-wr740n/v5/"
+   ]
+  },
+  {
+   "vendor": "TP-Link",
+   "model": "TL-WR842N",
+   "revisions": [
+    "v5"
+   ],
+   "externalAntennas": 2,
+   "sources": [
+    "https://www.tp-link.com/kz/home-networking/wifi-router/tl-wr842n/v5/"
+   ]
+  },
+  {
+   "vendor": "TP-Link",
+   "model": "TL-WR902AC",
+   "revisions": [
+    "v3"
+   ],
+   "externalAntennas": 0,
+   "sources": [
+    "https://www.tp-link.com/en/home-networking/wifi-router/tl-wr902ac/v3/"
+   ]
+  },
+  {
+   "vendor": "TP-Link",
+   "model": "TL-WR902AC",
+   "revisions": [
+    "v4"
+   ],
+   "externalAntennas": 0,
+   "sources": [
+    "https://www.tp-link.com/kz/home-networking/wifi-router/tl-wr902ac/v4/"
+   ]
+  },
+  {
+   "vendor": "TP-Link",
+   "model": "TL-XDR4288",
+   "externalAntennas": 5,
+   "sources": [
+    "https://www.tp-link.com.cn/product_2486.html"
+   ]
+  },
+  {
+   "vendor": "TP-Link",
+   "model": "TL-XDR6086",
+   "externalAntennas": 0,
+   "sources": [
+    "https://www.tp-link.com.cn/product_2491.html"
+   ]
+  },
+  {
+   "vendor": "TP-Link",
+   "model": "TL-XDR6088",
+   "externalAntennas": 8,
+   "sources": [
+    "https://www.tp-link.com.cn/product_2398.html"
+   ]
+  },
+  {
+   "vendor": "Tenda",
+   "model": "BE12 Pro",
+   "externalAntennas": 5,
+   "sources": [
+    "https://www.tendacn.com/product/specification/BE12Pro"
+   ]
+  },
+  {
+   "vendor": "Totolink",
+   "model": "BE3",
+   "externalAntennas": 0,
+   "sources": [
+    "https://www.totolink.net/products/be3"
+   ]
+  },
+  {
+   "vendor": "Totolink",
+   "model": "X6000R",
+   "externalAntennas": 4,
+   "sources": [
+    "https://www.totolink.net/products/x6000r"
+   ]
+  },
+  {
+   "vendor": "Ubiquiti",
+   "model": "AirGateway",
+   "externalAntennas": 0,
+   "sources": [
+    "https://dl.ui.com/datasheets/airgateway/airGateway_DS.pdf"
+   ]
+  },
+  {
+   "vendor": "Ubiquiti",
+   "model": "AirGateway Pro",
+   "externalAntennas": 0,
+   "sources": [
+    "https://dl.ui.com/datasheets/airgateway/airGateway_DS.pdf"
+   ]
+  },
+  {
+   "vendor": "Ubiquiti",
+   "model": "EdgePoint R6",
+   "externalAntennas": 0,
+   "sources": [
+    "https://dl.ui.com/datasheets/edgemax/EdgePoint_DS.pdf"
+   ]
+  },
+  {
+   "vendor": "Ubiquiti",
+   "model": "EdgeRouter 4",
+   "externalAntennas": 0,
+   "sources": [
+    "https://dl.ui.com/datasheets/edgemax/EdgeRouter_DS.pdf"
+   ]
+  },
+  {
+   "vendor": "Ubiquiti",
+   "model": "EdgeRouter 6P",
+   "externalAntennas": 0,
+   "sources": [
+    "https://dl.ui.com/datasheets/edgemax/EdgeRouter_DS.pdf"
+   ]
+  },
+  {
+   "vendor": "Ubiquiti",
+   "model": "EdgeRouter Lite",
+   "externalAntennas": 0,
+   "sources": [
+    "https://dl.ui.com/datasheets/edgemax/EdgeRouter_Lite_DS.pdf"
+   ]
+  },
+  {
+   "vendor": "Ubiquiti",
+   "model": "EdgeRouter X",
+   "externalAntennas": 0,
+   "sources": [
+    "https://dl.ui.com/datasheets/edgemax/EdgeRouter_X_DS.pdf"
+   ]
+  },
+  {
+   "vendor": "Ubiquiti",
+   "model": "EdgeRouter X-SFP",
+   "externalAntennas": 0,
+   "sources": [
+    "https://dl.ui.com/datasheets/edgemax/EdgeRouter_X_DS.pdf"
+   ]
+  },
+  {
+   "vendor": "Ubiquiti",
+   "model": "LiteBeam M5",
+   "externalAntennas": 0,
+   "sources": [
+    "https://dl.ui.com/datasheets/LiteBeam/LiteBeam_DS.pdf"
+   ]
+  },
+  {
+   "vendor": "Ubiquiti",
+   "model": "NanoBeam M5",
+   "revisions": [
+    "XW"
+   ],
+   "externalAntennas": 0,
+   "sources": [
+    "https://dl.ubnt.com/datasheets/nanobeam/NanoBeam_DS.pdf"
+   ]
+  },
+  {
+   "vendor": "Ubiquiti",
+   "model": "NanoStation AC",
+   "externalAntennas": 0,
+   "sources": [
+    "https://dl.ubnt.com/datasheets/NanoStation_AC/NanoStation_AC_DS.pdf"
+   ]
+  },
+  {
+   "vendor": "Ubiquiti",
+   "model": "NanoStation AC loco",
+   "externalAntennas": 0,
+   "sources": [
+    "https://dl.ubnt.com/datasheets/NanoStation_AC/NanoStation_AC_DS.pdf"
+   ]
+  },
+  {
+   "vendor": "Ubiquiti",
+   "model": "NanoStation Loco M",
+   "revisions": [
+    "XW v2"
+   ],
+   "externalAntennas": 0,
+   "sources": [
+    "https://dl.ubnt.com/datasheets/nanostationm/nsm_ds_web.pdf"
+   ]
+  },
+  {
+   "vendor": "Ubiquiti",
+   "model": "PowerBeam M5-300",
+   "revisions": [
+    "XW"
+   ],
+   "externalAntennas": 0,
+   "sources": [
+    "https://dl.ubnt.com/datasheets/powerbeam/PowerBeam_DS.pdf"
+   ]
+  },
+  {
+   "vendor": "Ubiquiti",
+   "model": "Rocket M",
+   "revisions": [
+    "XW"
+   ],
+   "externalAntennas": 0,
+   "sources": [
+    "https://dl.ubnt.com/datasheets/rocketm/RocketM_DS.pdf"
+   ]
+  },
+  {
+   "vendor": "Ubiquiti",
+   "model": "UniFi AC Mesh Pro",
+   "externalAntennas": 0,
+   "sources": [
+    "https://dl.ubnt.com/datasheets/unifi/UniFi_AC_Mesh_DS.pdf"
+   ]
+  },
+  {
+   "vendor": "Ubiquiti",
+   "model": "UniFi Security Gateway",
+   "externalAntennas": 0,
+   "sources": [
+    "https://dl.ubnt.com/datasheets/unifi/UniFi_Security_Gateway_DS.pdf"
+   ]
+  },
+  {
+   "vendor": "Ubiquiti",
+   "model": "UniFi Security Gateway 3P",
+   "externalAntennas": 0,
+   "sources": [
+    "https://dl.ubnt.com/datasheets/unifi/UniFi_Security_Gateway_DS.pdf"
+   ]
+  },
+  {
+   "vendor": "Ubiquiti",
+   "model": "UniFi Travel Router",
+   "externalAntennas": 0,
+   "sources": [
+    "https://techspecs.ui.com/unifi/wifi/utr"
+   ]
+  },
+  {
+   "vendor": "Xiaomi",
+   "model": "AIoT Router AC2350",
+   "externalAntennas": 7,
+   "sources": [
+    "https://www.mi.com/pk/mi-aiot-router-ac2350/specs/"
+   ]
+  },
+  {
+   "vendor": "Xiaomi",
+   "model": "AX3000T",
+   "revisions": [
+    "RD23",
+    "RD03"
+   ],
+   "externalAntennas": 4,
+   "sources": [
+    "https://www.mi.com/global/product/xiaomi-router-ax3000t/"
+   ]
+  },
+  {
+   "vendor": "Xiaomi",
+   "model": "AX9000",
+   "externalAntennas": 12,
+   "sources": [
+    "https://www.mi.com/global/product/mi-router-ax9000/"
+   ]
+  },
+  {
+   "vendor": "Xiaomi",
+   "model": "Mi AIoT Router AX3600",
+   "externalAntennas": 7,
+   "sources": [
+    "https://www.mi.com/global/product/mi-aiot-router-ax3600/specs/"
+   ]
+  },
+  {
+   "vendor": "Xiaomi",
+   "model": "Mi Router AC2100",
+   "externalAntennas": 0,
+   "sources": [
+    "https://www.mi.com/miwifiac"
+   ]
+  },
+  {
+   "vendor": "Xiaomi",
+   "model": "MiWifi 3C",
+   "externalAntennas": 4,
+   "sources": [
+    "https://www.mi.com/miwifi3c"
+   ]
+  },
+  {
+   "vendor": "Zyxel",
+   "model": "EMG2926-Q10A",
+   "revisions": [
+    "1.00",
+    "A02",
+    "A03"
+   ],
+   "externalAntennas": 0,
+   "sources": [
+    "https://www.zyxel.com/ProductTab.shtml?c=gb&idx=1&l=en&pid=20140714174100"
+   ]
+  },
+  {
+   "vendor": "Zyxel",
+   "model": "Keenetic Extra II",
+   "externalAntennas": 4,
+   "sources": [
+    "https://keenetic.ru/ru/zyxel-keenetic-extra-2"
+   ]
+  },
+  {
+   "vendor": "Zyxel",
+   "model": "Keenetic Omni",
+   "revisions": [
+    "Rev. A"
+   ],
+   "externalAntennas": 2,
+   "sources": [
+    "https://keenetic.ru/ru/zyxel-keenetic-omni"
+   ]
+  },
+  {
+   "vendor": "Zyxel",
+   "model": "LTE5398-M904",
+   "externalAntennas": 0,
+   "sources": [
+    "https://www.zyxel.com/global/en/products/fixed-wireless-access/lte5398-m904/specifications"
+   ]
+  },
+  {
+   "vendor": "Zyxel",
+   "model": "LTE7490-M904",
+   "externalAntennas": 0,
+   "sources": [
+    "https://www.zyxel.com/global/en/products/mobile-broadband/lte7490-m904/specifications"
+   ]
+  },
+  {
+   "vendor": "Zyxel",
+   "model": "NBG6515",
+   "externalAntennas": 2,
+   "sources": [
+    "https://www.zyxel.com/global/en/products/wifi-router/ac750-dual-band-wireless-gigabit-router-nbg6515/specifications"
+   ]
+  },
+  {
+   "vendor": "Zyxel",
+   "model": "NR7101",
+   "externalAntennas": 0,
+   "sources": [
+    "https://www.zyxel.com/products_services/5G-New-Radio-Outdoor-Router-NR7101/"
+   ]
+  },
+  {
+   "vendor": "Zyxel",
+   "model": "NWA110AX",
+   "externalAntennas": 0,
+   "sources": [
+    "https://www.zyxel.com/global/en/products/wireless/nwa110ax/specification"
+   ]
+  },
+  {
+   "vendor": "Zyxel",
+   "model": "NWA210AX",
+   "externalAntennas": 0,
+   "sources": [
+    "https://www.zyxel.com/global/en/products/wireless/ax3000-6-stream-wifi-6-dual-radio-nebulaflex-access-point-nwa210ax/specification"
+   ]
+  },
+  {
+   "vendor": "Zyxel",
+   "model": "NWA50AX",
+   "externalAntennas": 0,
+   "sources": [
+    "https://www.zyxel.com/de/de/products/wireless/nwa50ax/specifications"
+   ]
+  },
+  {
+   "vendor": "Zyxel",
+   "model": "NWA50AX Pro",
+   "externalAntennas": 0,
+   "sources": [
+    "https://www.zyxel.com/se/sv/products/wireless/nwa50ax-pro/specifications"
+   ]
+  },
+  {
+   "vendor": "Zyxel",
+   "model": "NWA90AX",
+   "externalAntennas": 0,
+   "sources": [
+    "https://www.zyxel.com/de/de/products/wireless/nwa90ax/specifications"
+   ]
+  },
+  {
+   "vendor": "Zyxel",
+   "model": "NWA90AX Pro",
+   "externalAntennas": 0,
+   "sources": [
+    "https://www.zyxel.com/se/sv/products/wireless/nwa90ax-pro/specifications"
+   ]
+  },
+  {
+   "vendor": "Zyxel",
+   "model": "SCR50AXE",
+   "externalAntennas": 0,
+   "sources": [
+    "https://www.zyxel.com/global/en/products/security-router/axe5400-wifi-6e-security-router-scr-50axe/specifications"
+   ]
+  },
+  {
+   "vendor": "Zyxel",
+   "model": "WSM20",
+   "externalAntennas": 0,
+   "sources": [
+    "https://www.zyxel.com/uk/en-gb/products/wifi-system/ax1800-wifi6-whole-home-wifi-system-multy-m1/specifications"
+   ]
+  },
+  {
+   "vendor": "Zyxel",
+   "model": "WX5600-T0",
+   "externalAntennas": 0,
+   "sources": [
+    "https://spdl.zyxel.com/WX5600-T0/datasheet/WX5600-T0_3.pdf"
+   ]
+  },
+  {
+   "vendor": "netis",
+   "model": "EAP930",
+   "revisions": [
+    "V1"
+   ],
+   "externalAntennas": 0,
+   "sources": [
+    "https://www.netis-systems.com/business/EAP930.html"
+   ]
+  },
+  {
+   "vendor": "netis",
+   "model": "N6",
+   "externalAntennas": 4,
+   "sources": [
+    "https://www.netis-systems.com/products/N6.html"
+   ]
+  },
+  {
+   "vendor": "netis",
+   "model": "NX30",
+   "revisions": [
+    "V2"
+   ],
+   "externalAntennas": 5,
+   "sources": [
+    "https://www.netis-systems.com/products/NX30.html"
+   ]
+  },
+  {
+   "vendor": "netis",
+   "model": "NX31",
+   "externalAntennas": 4,
+   "sources": [
+    "https://www.netisru.com/products/NX31.html"
+   ]
+  },
+  {
+   "vendor": "netis",
+   "model": "NX32U",
+   "externalAntennas": 4,
+   "sources": [
+    "https://www.netisru.com/products/NX32U.html"
+   ]
+  },
+  {
+   "vendor": "netis",
+   "model": "NX62",
+   "externalAntennas": 8,
+   "sources": [
+    "https://www.netis-systems.com/products/NX62.html"
    ]
   }
  ]
