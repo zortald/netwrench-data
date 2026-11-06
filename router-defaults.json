@@ -1,7 +1,7 @@
 {
   "schema": 2,
-  "version": 2,
-  "updated": "2026-09-09",
+  "version": 3,
+  "updated": "2026-11-06",
   "entries": [
     {
       "id": "tplink-archer-setup",
@@ -954,6 +954,35 @@
         "en": "airOS. UniFi devices take their credentials at adoption."
       },
       "source": "Ubiquiti airOS documentation"
+    },
+    {
+      "id": "pixlink",
+      "vendor": "PIX-LINK",
+      "addresses": [
+        "192.168.7.1"
+      ],
+      "access": [
+        {
+          "type": "http",
+          "port": 80,
+          "enabled": true
+        }
+      ],
+      "auth": {
+        "usernameField": false,
+        "username": null,
+        "usernameCreated": false,
+        "password": "admin",
+        "passwordCreated": false,
+        "passwordOnLabel": false,
+        "wizardBlocks": false
+      },
+      "verified": true,
+      "note": {
+        "ru": "После первого входа требует сменить пароль.",
+        "en": "Asks for a new password after the first login."
+      },
+      "source": "Q304-11A_101 firmware, captured 2026-11-05"
     }
   ]
 }
